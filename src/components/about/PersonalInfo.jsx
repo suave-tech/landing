@@ -1,16 +1,10 @@
 import React from "react";
 
 const personalInfoContent = [
-  { meta: "first name", metaInfo: "Steve" },
-  { meta: "last name", metaInfo: "Milner" },
-  { meta: "Age", metaInfo: "27 Years" },
-  { meta: "Nationality", metaInfo: "Tunisian" },
-  { meta: "Freelance", metaInfo: "Available" },
-  { meta: "Address", metaInfo: "Tunis" },
-  { meta: "phone", metaInfo: "+21621184010" },
-  { meta: "Email", metaInfo: "you@mail.com" },
-  { meta: "Skype", metaInfo: " steve.milner" },
-  { meta: "langages", metaInfo: "French, English" },
+  { meta: "Phone", metaInfo: "+1-512-572-2071" },
+  { meta: "Email", metaInfo: "pubkeygroup@gmail.com" },
+  { meta: "Fax", metaInfo: "+1-512-539-2870" },
+  { meta: "Langages", metaInfo: "English" }
 ];
 
 const PersonalInfo = () => {
@@ -24,6 +18,14 @@ const PersonalInfo = () => {
           </span>
         </li>
       ))}
+    <p></p>
+      <li> 
+          <h3 className="text-uppercase custom-title mb-0 ft-wt-600">
+                      Address
+                    </h3>
+
+        <div>Pubkey Group LLC<br />#1081<br />1201 Barbara Johnson Blvd<br />STE 700<br />Austin, TX 78723</div>
+      </li>
     </ul>
   );
 };

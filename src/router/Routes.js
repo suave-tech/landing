@@ -12,9 +12,7 @@ const Routes = () => {
       <Router>
         <ScrollTopBehaviour />
         <Switch>
-          <Route exact path="/" component={Preview} />
-          <Route path="/home-light" component={HomeLight} />
-          <Route path="/home-dark" component={HomeDark} />
+          <Route exact path="/" component={HomeDark} />
           <Route component={NotFound} />
         </Switch>
       </Router>
