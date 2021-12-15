@@ -3,15 +3,13 @@ import Modal from "react-modal";
 import Index from "../about/index";
 
 const heroContent = {
-  heroImage: "img/hero/light.jpg",
-  heroMobileImage: "img-mobile-light",
-  heroTitleName: "lucy milner",
-  heroDesignation: "web designer",
-  heroDescriptions: `I'm a Tunisian based web designer & front‑end developer focused on
-  crafting clean & user‑friendly experiences, I am passionate about
-  building excellent software that improves the lives of those
-  around me.`,
-  heroBtn: "more about me",
+  heroImage: "img/hero/hero.png",
+  heroMobileImage: "pk",
+  heroTitleName: "Pubkey Group",
+  heroDesignation: "Crypto Consortium",
+  heroDescriptions: `We are an Austin based development team experienced in cryptocurrency application development. Our mission is to write the next generation of free finance, and a free world.
+  Looking for support from experienced developers in the space? Reach out now!`,
+  heroBtn: "more about us",
 };
 
 const HeroLight = () => {
@@ -39,7 +37,7 @@ const HeroLight = () => {
               alt="hero man"
             />
             <h1 className="text-uppercase poppins-font">
-              I'm {heroContent.heroTitleName}.
+              We're {heroContent.heroTitleName}.
               <span>{heroContent.heroDesignation}</span>
             </h1>
             <p className="open-sans-font">{heroContent.heroDescriptions}</p>
@@ -71,9 +69,9 @@ const HeroLight = () => {
             <div data-aos="fade-up" data-aos-duration="1200">
               <div className="title-section text-left text-sm-center">
                 <h1>
-                  ABOUT <span>ME</span>
+                  ABOUT <span>US</span>
                 </h1>
-                <span className="title-bg">Resume</span>
+                <span className="title-bg">ABOUT US</span>
               </div>
               {/* End title */}
               <Index />
