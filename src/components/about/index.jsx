@@ -44,7 +44,7 @@ const index = () => {
 
           {/*  Boxes Starts */}
           <div className="col-xl-6 col-lg-7 col-12 mt-5 mt-lg-0">
-            <Achievements />
+	  { /* <Achievements /> */ }
           </div>
           {/* Achievements Ends */}
         </div>
