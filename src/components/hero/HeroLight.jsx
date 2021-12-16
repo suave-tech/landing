@@ -7,7 +7,7 @@ const heroContent = {
   heroMobileImage: "img/hero/hero.png",
   heroTitleName: "Pubkey Group",
   heroDesignation: "Crypto Consortium",
-  heroDescriptions: `We are an Austin based development team experienced in cryptocurrency application development. Our mission is to write the next generation of free finance, and a free world.
+  heroDescriptions: `We are an Austin based development team experienced in cryptocurrency application development. Our mission is to write the next generation of free finance, and build for a free world.
   Looking for support from experienced developers in the space? Reach out now!`,
   heroBtn: "more about us",
 };
