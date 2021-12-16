@@ -4,7 +4,7 @@ import Index from "../../components/about/index";
 
 const heroContent = {
   heroImage: "img/hero/hero.png",
-  heroMobileImage: "img/hero/hero.png",
+  heroMobileImage: "img/hero/pk.png",
   heroTitleName: "Pubkey Group",
   heroDesignation: "Crypto Consortium",
   heroDescriptions: `We are an Austin based development team experienced in cryptocurrency application development. Our mission is to write the next generation of free finance, and build for a free world.
