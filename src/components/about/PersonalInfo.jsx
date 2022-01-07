@@ -2,7 +2,7 @@ import React from "react";
 
 const personalInfoContent = [
   { meta: "Phone", metaInfo: "+1-512-572-2071" },
-  { meta: "Email", metaInfo: "pubkeygroup@gmail.com" },
+  { meta: "Email", metaInfo: "inquiries@pubkey.group" },
   { meta: "Fax", metaInfo: "+1-512-539-2870" },
   { meta: "Langages", metaInfo: "English" }
 ];
