@@ -1,9 +1,9 @@
-# pubkey.group
+# Suave Tech Solutions
 
-Homepage for [https://pubkey.group](https://pubkey.group)
+Homepage for [https://suavetech.solutions](https://suavetech.solutions)
 
 react-scripts project
 
 ## Author
 
-Pubkey Group LLC
+Suave Tech Solutions, LLC

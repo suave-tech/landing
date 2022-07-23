@@ -1,10 +1,10 @@
 import React from "react";
 
 const personalInfoContent = [
-  { meta: "Phone", metaInfo: "+1-512-572-0271" },
+  { meta: "Phone", metaInfo: "+1-470-610-0091" },
   { meta: "Email", metaInfo: "inquiries@pubkey.group" },
-  { meta: "Fax", metaInfo: "+1-512-539-2870" },
-  { meta: "Langages", metaInfo: "English" }
+  { meta: "Fax", metaInfo: "+1-470-610-0071" },
+  { meta: "Languages", metaInfo: "English, Romanian, Spanish" }
 ];
 
 const PersonalInfo = () => {
@@ -18,13 +18,11 @@ const PersonalInfo = () => {
           </span>
         </li>
       ))}
-    <p></p>
       <li> 
-          <h3 className="text-uppercase custom-title mb-0 ft-wt-600">
-                      Address
-                    </h3>
-
-        <div>Pubkey Group LLC<br />#1081<br />1201 Barbara Johnson Blvd<br />STE 700<br />Austin, TX 78723</div>
+        <h3 className="text-uppercase custom-title mb-0 ft-wt-600">
+          Address
+        </h3>
+        <div>Suave Tech Solutions, LLC<br />#2537<br />312 W. 2nd St<br />Casper, WY 82601</div>
       </li>
     </ul>
   );

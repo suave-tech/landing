@@ -3,11 +3,11 @@ import Modal from "react-modal";
 import Index from "../../components/about/index";
 
 const heroContent = {
-  heroImage: "img/hero/hero.png",
-  heroMobileImage: "img/hero/pk.png",
-  heroTitleName: "Pubkey Group",
+  heroImage: "/logo.png",
+  heroMobileImage: "/logo.png",
+  heroTitleName: "Suave Tech Solutions",
   heroDesignation: "Crypto Consortium",
-  heroDescriptions: `We are an Austin based development team experienced in cryptocurrency application development. Our mission is to write the next generation of free finance, and build for a free world.
+  heroDescriptions: `We are a New York based development team experienced in cryptocurrency application development. Our mission is to write the next generation of free finance, and build for a free world.
   Looking for support from experienced developers in the space? Reach out now!`,
   heroBtn: "more about us",
 };
@@ -27,9 +27,12 @@ const Hero = () => {
             backgroundImage: `url(${
               process.env.PUBLIC_URL + heroContent.heroImage
             })`,
+            backgroundColor: "#1d1d1d",
+            backgroundPosition: "center",
+            backgroundSize: "300px 300px"
           }}
         ></div>
-        <div className="col-12 col-lg-8 offset-lg-4 home-details  text-center text-lg-start">
+        <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start">
           <div>
             <img
               src={`${heroContent.heroMobileImage}`}
@@ -37,7 +40,7 @@ const Hero = () => {
               alt="hero man"
             />
             <h1 className="text-uppercase poppins-font">
-              We're {heroContent.heroTitleName}.
+              Introducing {heroContent.heroTitleName}.
             </h1>
             <p className="open-sans-font">{heroContent.heroDescriptions}</p>
             <button className="button" onClick={toggleModalOne}>

@@ -1366,12 +1366,13 @@ body.light .contact .custom-span-contact a {
   }
 
   .main-img-mobile {
-    border-radius: 50%;
-    width: 270px;
-    height: 270px;
+    border-radius: 2px;
+    width: 250px;
+    height: 250px;
     border: 4px solid #252525;
     margin: 0 auto 25px;
     display: block;
+    padding: 10px;
   }
 
   .home .home-details h1 {
@@ -1637,6 +1638,7 @@ body.light .contact .custom-span-contact a {
   .main-img-mobile {
     width: 230px;
     height: 230px;
+    background-color: #1d1d1d;
   }
   .title-section {
     padding-left: 15px;
