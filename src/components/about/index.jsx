@@ -1,7 +1,4 @@
 import React from "react";
-import Achievements from "./Achievements";
-import Education from "./Education";
-import Experience from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
 
