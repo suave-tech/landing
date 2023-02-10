@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Routes from "./router/Routes";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./ui/components/ScrollToTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import AnimatedCursor from "react-animated-cursor";
+import Routes from "./Routes";
 
 const App = () => {
   // this for animation

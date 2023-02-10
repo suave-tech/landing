@@ -1829,6 +1829,11 @@ body.light .tab-panel_list > div {
     max-width: 50%;
   }
 }
+@media screen and (max-width: 768px) {
+  .about-list {
+    flex-direction: column;
+  }
+}
 
 body::-webkit-scrollbar {
   width: 12px; /* width of the entire scrollbar */
@@ -1865,9 +1870,16 @@ button:focus {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 .pr-2 {
   padding-right: 0.5rem !important;
+}
+.pl-6 {
+  padding-left: 3rem;
+}
+@media screen and (max-width: 768px) {
+  .pl-6 {
+    padding-left: 0
+  }
 }
 .none #showSwitcher {
   display: none;

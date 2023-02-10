@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import Index from "../../components/about/index";
+import Index from "../about/index";
 
 const heroContent = {
   heroImage: "/logo.png",
   heroMobileImage: "/logo.png",
   heroTitleName: "Suave Tech Solutions",
   heroDesignation: "Crypto Consortium",
-  heroDescriptions: `We are a New York based development team experienced in cryptocurrency application development. Our mission is to write the next generation of free finance, and build for a free world.
-  Looking for support from experienced developers in the space? Reach out now!`,
-  heroBtn: "more about us",
+  heroDescriptions: `We are a New York City based development team experienced in web, mobile, and cryptocurrency application development as well as other software development needs. Our mission is to empower businesses through innovative tech solutions, while providing exceptional client support and delivering measurable results.
+  Consult with us today!`,
+  heroBtn: "Contact us",
 };
 
 const Hero = () => {
@@ -52,11 +52,11 @@ const Hero = () => {
       </div>
       {/* End home-details-container */}
 
-      {/* Start Modal for About More */}
+      {/* Start Modal for Contact Form */}
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModalOne}
-        contentLabel="My dialog"
+        contentLabel="Contact Dialog"
         className="custom-modal dark hero"
         overlayClassName="custom-overlay dark"
         closeTimeoutMS={500}
@@ -71,12 +71,12 @@ const Hero = () => {
             <div data-aos="fade-up" data-aos-duration="1200">
               <div className="title-section text-left text-sm-center">
                 <h1>
-                  ABOUT <span>US</span>
+                  CONTACT <span>US</span>
                 </h1>
-                <span className="title-bg">ABOUT US</span>
+                <span className="title-bg">CONTACT</span>
               </div>
               {/* End title */}
-              <Index />
+              
             </div>
           </div>
         </div>

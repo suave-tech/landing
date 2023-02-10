@@ -1,26 +1,23 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Hero from "../../components/hero/Hero";
-import Index from "../../components/about/index";
-import Address from "../../components/Address";
-import Portfolio from "../../components/portfolio/Portfolio";
-import Blog from "../../components/blog/Blog";
-import Contact from "../../components/Contact";
-import Social from "../../components/Social";
+import Hero from "../ui/hero/Hero";
+import Index from "../ui/about/index";
+import Address from "../ui/components/Address";
+import Portfolio from "../ui/portfolio/Portfolio";
+import Blog from "../ui/blog/Blog";
+import Contact from "../ui/components/Contact";
+import Social from "../ui/components/Social";
 
 const menuItem = [
   { icon: "fa-home", menuName: "Home" },
-  { icon: "fa-user", menuName: "About" }
+  { icon: "fa-user", menuName: "About" },
+  // { icon: "fa-briefcase", menuName: "Works" },
+  { icon: "fa-envelope", menuName: "Contact" }
 ];
 
-const HomeDark = () => {
+const Home = () => {
   return (
     <div className="yellow">
-      <div className="demo-sticker">
-        <a href="/">
-          <i className="fa fa-lightbulb-o" aria-hidden="true"></i>
-        </a>
-      </div>
       <Tabs>
         <div className="header">
           <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
@@ -50,12 +47,12 @@ const HomeDark = () => {
 
           {/* About Content Starts */}
           <TabPanel className="about">
-            <div data-aos="fade-up" data-aos-duration="1200">
+            <div data-aos="fade-up" data-aos-duration="1200" className="min-screen">
               <div className="title-section text-left text-sm-center">
                 <h1>
                   ABOUT <span>US</span>
                 </h1>
-                <span className="title-bg">ABOUT US</span>
+                <span className="title-bg">ABOUT</span>
               </div>
               {/* End title */}
               <Index />
@@ -63,35 +60,10 @@ const HomeDark = () => {
           </TabPanel>
           {/* About Content Ends */}
 
-          {/* Portfolio Content Starts */}
-          <TabPanel className="portfolio professional">
+                    {/* Contact Content Starts */}
+                    <TabPanel className="contact">
             <div
-              className="title-section text-left text-sm-center"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-            >
-              <h1>
-                my <span>portfolio</span>
-              </h1>
-              <span className="title-bg">works</span>
-            </div>
-            {/* End title */}
-            <div
-              className="container grid-gallery main-content"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <Portfolio />
-            </div>
-            {/* End grid gallery */}
-          </TabPanel>
-          {/* Portfolio Content Ends */}
-
-          {/* Contact Content Starts */}
-          <TabPanel className="contact">
-            <div
-              className="title-section text-left text-sm-center"
+              className="title-section text-left text-sm-center min-screen"
               data-aos="fade-up"
               data-aos-duration="1200"
             >
@@ -112,14 +84,14 @@ const HomeDark = () => {
                     Don't be shy !
                   </h3>
                   <p className="open-sans-font mb-4">
-                    Feel free to get in touch with me. I am always open to
+                    Feel free to get in touch with us. We are always open to
                     discussing new projects, creative ideas or opportunities to
-                    be part of your visions.
+                    be part of your visions!
                   </p>
                   <Address />
                   {/* End Address */}
 
-                  <Social />
+                  {/* <Social /> */}
                   {/* End Social */}
                 </div>
                 {/* Left Side Ends */}
@@ -134,6 +106,31 @@ const HomeDark = () => {
             {/* End .container */}
           </TabPanel>
           {/* Contact Content Ends */}
+
+          {/* Portfolio Content Starts */}
+          <TabPanel className="portfolio professional">
+            <div
+              className="title-section text-left text-sm-center"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+            >
+              <h1>
+                our <span>works</span>
+              </h1>
+              <span className="title-bg">works</span>
+            </div>
+            {/* End title */}
+            <div
+              className="container grid-gallery main-content"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-delay="100"
+            >
+              <Portfolio />
+            </div>
+            {/* End grid gallery */}
+          </TabPanel>
+          {/* Portfolio Content Ends */}
 
           {/* Blog Content Starts */}
           <TabPanel className="blog">
@@ -166,4 +163,4 @@ const HomeDark = () => {
   );
 };
 
-export default HomeDark;
+export default Home;
