@@ -7,8 +7,7 @@ const heroContent = {
   heroMobileImage: "/img/logo.png",
   heroTitleName: "Suave Tech Solutions",
   heroDesignation: "Crypto Consortium",
-  heroDescriptions: `We are a New York City based development team experienced in web, mobile, and blockchain application development as well as other software development needs. Our mission is to empower businesses through innovative tech solutions, while providing exceptional client support and delivering measurable results.
-  Consult with us today!`,
+  heroDescriptions: `We are a New York City based development team experienced in web, mobile, and blockchain application development as well as other software development needs. Our mission is to empower businesses through consulting and innovative tech solutions, while providing client support and delivering measurable results.`,
   heroBtn: "Contact us",
 };
 
