@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import PortfolioModalItem from "./modal";
 
@@ -7,66 +7,74 @@ const Portfolio = () => {
     {
       company: "zeroDAO",
       link: "zerodao.com",
-      img: "/img/ZD-logo-3d.png",
+      img: "/img/companies/ZD-logo-3d.png",
+      preview: "/img/companies/zerodao-preview.png",
       languages: "NextTS, Solidity, Typescript, SQL",
-      description: "description",
-      type: "blockchain"
+      description: "zeroDAO is the decentralized governor of the ZERO network, enabling cross-chain messaging for trade or even more complex scripting.",
+      type: "Blockchain"
     },
     {
       company: "VMEX Finance",
       link: "vmex.finance",
-      img: "/img/vmex-logo.svg",
+      img: "/img/companies/vmex-logo.svg",
+      preview: "/img/companies/vmex-preview.png",
       languages: "NextTS, Solidity, Typescript, SQL",
-      description: "description",
-      type: "blockchain"
+      description: "VMEX Finance is a decentralized, next-generation lending and borrowing protocol.",
+      type: "Blockchain"
+    },
+    {
+      company: "DataEarn",
+      link: "app.dataearn.com",
+      img: "/img/companies/dataearn-logo.svg",
+      preview: "/img/companies/dataearn-preview.png",
+      languages: "NextTS, Python, Django, SQL",
+      description: "DataEarn is building a way to allow individuals to access, understand, protect, and monetize their data.",
+      type: "Web App"
     },
     {
       company: "Bonanza Exorsa",
       link: "bonanzaexorsa.com",
-      img: "/img/bonanza-3d-logo.png",
+      img: "/img/companies/bonanza-3d-logo.png",
+      preview: "/img/companies/bonanza-preview.png",
       languages: "NextTS, Solidity, Typescript",
-      description: "description",
-      type: "blockchain"
+      description: "Bonanza Exorsa is a metaphysical brand using NFT's.",
+      type: "Blockchain"
     },
     {
-      company: "DataEarn",
-      link: "dataearn.com",
-      img: "/img/dataearn-logo.svg",
-      languages: "NextTS, Python, Django, SQL",
-      description: "description",
-      type: "websites"
+      company: "Vita Films",
+      link: "vitafilmllc.com",
+      img: "/img/companies/vita-logo.png",
+      preview: "/img/companies/vita-preview.png",
+      languages: "Nextjs, CSS",
+      description: "Vita Film is a videography and media company specializing in outdoor, wedding, and commercial spaces.",
+      type: "Website"
+    },
+    {
+      company: "Live Duel",
+      link: "liveduel.com",
+      img: "/img/companies/liveduel-logo.png",
+      preview: "/img/companies/liveduel-preview.png",
+      languages: "NextTS, Solidity, Typescript, SQL",
+      description: "LiveDuel combines live streaming and interactive content like our prediction exchange and live trivia game show using blockchain technology.",
+      type: "Blockchain"
     },
     {
       company: "Sports Roulette ATL",
       link: "sportsrouletteatl.com",
-      img: "/img/sra-logo.png",
+      img: "/img/companies/sra-logo.png",
+      preview: "/img/companies/sra-preview.png",
       languages: "NextTS, CSS",
-      description: "description",
-      type: "websites"
+      description: "Sports Roulette ATL is a fun sports league for adults looking to casually network.",
+      type: "Website"
     },
     {
-      company: "D Customs",
-      link: "https://www.preview.com",
-      img: "",
-      languages: "Nextjs, CSS",
-      description: "description",
-      type: "websites"
-    },
-    {
-      company: "Raycon",
-      link: "raycon.com",
-      img: "",
-      languages: "Liquid, HTML, CSS",
-      description: "description",
-      type: "ecommerce"
-    },
-    {
-      company: "Upwife",
-      link: "upwife.com",
-      img: "",
-      languages: "React Native, Typescript",
-      description: "description",
-      type: "app"
+      company: "Lazar Stucco",
+      link: "lazarstucco.com",
+      img: "/img/companies/lazar-logo.png",
+      preview: "/img/companies/lazar-preview.png",
+      languages: "HTML, CSS",
+      description: "Lazar Stucco is an experienced contractor working with European Stucco for residential and commercial construction. ",
+      type: "Website"
     }
   ]
 
@@ -76,8 +84,8 @@ const Portfolio = () => {
         <Tab>ALL</Tab>
         <Tab>BLOCKCHAIN</Tab>
         <Tab>WEBSITES</Tab>
-        <Tab>ECOMMERCE</Tab>
-        <Tab>MOBILE</Tab>
+        {/* <Tab>ECOMMERCE</Tab>
+        <Tab>MOBILE</Tab> */}
       </TabList>
 
       <div className="portfolio-tab-content">
@@ -90,13 +98,7 @@ const Portfolio = () => {
                 data-aos-duration="1200"
                 data-aos-delay="0"
               >
-                <PortfolioModalItem 
-                  company={el.company}
-                  link={el.link}
-                  img={el.img}
-                  languages={el.languages}
-                  description={el.description}
-                />
+                <PortfolioModalItem {...el} />
               </li>
             ))}
           </ul>
@@ -105,20 +107,14 @@ const Portfolio = () => {
         {/* BLOCKCHAIN */}
         <TabPanel>
           <ul className="row grid justify-content-center">
-          {PORTFOLIO_ITEMS.filter((el) => el.type === 'blockchain').map((el) => (
+          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase() === 'blockchain').map((el) => (
             <li
             className="direction-reveal"
             data-aos="fade-right"
             data-aos-duration="1200"
             data-aos-delay="0"
           >
-                <PortfolioModalItem 
-                  company={el.company}
-                  link={el.link}
-                  img={el.img}
-                  languages={el.languages}
-                  description={el.description}
-                />
+                <PortfolioModalItem {...el} />
               </li>
             ))}
           </ul>
@@ -127,20 +123,14 @@ const Portfolio = () => {
         {/* WEBSITES */}
         <TabPanel>
           <ul className="row grid justify-content-center">
-          {PORTFOLIO_ITEMS.filter((el) => el.type === 'websites').map((el) => (
+          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase().includes('web')).map((el) => (
             <li
             className="direction-reveal"
             data-aos="fade-right"
             data-aos-duration="1200"
             data-aos-delay="0"
           >
-                <PortfolioModalItem 
-                  company={el.company}
-                  link={el.link}
-                  img={el.img}
-                  languages={el.languages}
-                  description={el.description}
-                />
+                <PortfolioModalItem {...el} />
               </li>
             ))}
           </ul>
@@ -149,20 +139,14 @@ const Portfolio = () => {
         {/* ECOMMERCE */}
         <TabPanel>
           <ul className="row grid justify-content-center">
-          {PORTFOLIO_ITEMS.filter((el) => el.type === 'ecommerce').map((el) => (
+          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase() === 'ecommerce').map((el) => (
             <li
             className="direction-reveal"
             data-aos="fade-right"
             data-aos-duration="1200"
             data-aos-delay="0"
           >
-                <PortfolioModalItem 
-                  company={el.company}
-                  link={el.link}
-                  img={el.img}
-                  languages={el.languages}
-                  description={el.description}
-                />
+                <PortfolioModalItem {...el} />
               </li>
             ))}
           </ul>
@@ -171,20 +155,14 @@ const Portfolio = () => {
         {/* APP */}
         <TabPanel>
           <ul className="row grid justify-content-center">
-          {PORTFOLIO_ITEMS.filter((el) => el.type === 'app').map((el) => (
+          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase() === 'app').map((el) => (
             <li
             className="direction-reveal"
             data-aos="fade-right"
             data-aos-duration="1200"
             data-aos-delay="0"
           >
-                <PortfolioModalItem 
-                  company={el.company}
-                  link={el.link}
-                  img={el.img}
-                  languages={el.languages}
-                  description={el.description}
-                />
+                <PortfolioModalItem {...el} />
               </li>
             ))}
           </ul>
