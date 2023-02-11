@@ -42,7 +42,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                   <span className="project-label">Preview </span>:{" "}
                   <span className="ft-wt-600 uppercase">
                     <a
-                      href={link}
+                      href={`https://${link}`}
                       target="_blank"
                       rel="noreferrer"
                     >
