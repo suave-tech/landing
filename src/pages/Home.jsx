@@ -2,16 +2,14 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Hero from "../ui/hero/Hero";
 import Index from "../ui/about/index";
-import Address from "../ui/components/Address";
 import Portfolio from "../ui/portfolio/Portfolio";
 import Blog from "../ui/blog/Blog";
 import Contact from "../ui/components/Contact";
-import Social from "../ui/components/Social";
 
 const menuItem = [
   { icon: "fa-home", menuName: "Home" },
-  { icon: "fa-user", menuName: "About" },
-  // { icon: "fa-briefcase", menuName: "Works" },
+  // { icon: "fa-user", menuName: "About" },
+  { icon: "fa-briefcase", menuName: "Works" },
   { icon: "fa-envelope", menuName: "Contact" }
 ];
 
@@ -29,10 +27,8 @@ const Home = () => {
             ))}
           </TabList>
         </div>
-        {/* End Menu Content */}
 
         <div className="tab-panel_list">
-          {/* Hero Content Starts */}
           <TabPanel className="home ">
             <div
               className="container-fluid main-container container-home p-0 "
@@ -43,27 +39,31 @@ const Home = () => {
               <Hero />
             </div>
           </TabPanel>
-          {/* Hero Content Ends */}
 
-          {/* About Content Starts */}
-          <TabPanel className="about">
-            <div data-aos="fade-up" data-aos-duration="1200" className="min-screen">
-              <div className="title-section text-left text-sm-center">
-                <h1>
-                  ABOUT <span>US</span>
-                </h1>
-                <span className="title-bg">ABOUT</span>
-              </div>
-              {/* End title */}
-              <Index />
+          <TabPanel className="portfolio professional">
+            <div
+              className="title-section text-left text-sm-center"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+            >
+              <h1>
+                our <span>works</span>
+              </h1>
+              <span className="title-bg">works</span>
+            </div>
+            <div
+              className="container grid-gallery main-content"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-delay="100"
+            >
+              <Portfolio />
             </div>
           </TabPanel>
-          {/* About Content Ends */}
 
-                    {/* Contact Content Starts */}
-                    <TabPanel className="contact">
+          <TabPanel className="contact">
             <div
-              className="title-section text-left text-sm-center min-screen"
+              className="title-section text-left text-sm-center"
               data-aos="fade-up"
               data-aos-duration="1200"
             >
@@ -78,7 +78,6 @@ const Home = () => {
               data-aos-duration="1200"
             >
               <div className="row">
-                {/*  Left Side Starts */}
                 <div className="col-12 col-lg-4">
                   <h3 className="text-uppercase custom-title mb-0 ft-wt-600 pb-3">
                     Don't be shy !
@@ -88,75 +87,14 @@ const Home = () => {
                     discussing new projects, creative ideas or opportunities to
                     be part of your visions!
                   </p>
-                  <Address />
-                  {/* End Address */}
-
-                  {/* <Social /> */}
-                  {/* End Social */}
                 </div>
-                {/* Left Side Ends */}
 
-                {/*  Contact Form Starts  */}
                 <div className="col-12 col-lg-8">
                   <Contact />
                 </div>
-                {/*  Contact Form Ends */}
               </div>
             </div>
-            {/* End .container */}
           </TabPanel>
-          {/* Contact Content Ends */}
-
-          {/* Portfolio Content Starts */}
-          <TabPanel className="portfolio professional">
-            <div
-              className="title-section text-left text-sm-center"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-            >
-              <h1>
-                our <span>works</span>
-              </h1>
-              <span className="title-bg">works</span>
-            </div>
-            {/* End title */}
-            <div
-              className="container grid-gallery main-content"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-              data-aos-delay="100"
-            >
-              <Portfolio />
-            </div>
-            {/* End grid gallery */}
-          </TabPanel>
-          {/* Portfolio Content Ends */}
-
-          {/* Blog Content Starts */}
-          <TabPanel className="blog">
-            <div
-              className="title-section text-left text-sm-center "
-              data-aos="fade-up"
-              data-aos-duration="1200"
-            >
-              <h1>
-                my <span>blog</span>
-              </h1>
-              <span className="title-bg">posts</span>
-            </div>
-            <div
-              className="container"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-            >
-              {/*  Articles Starts  */}
-              <div className="row pb-50">
-                <Blog />
-              </div>
-              {/* Articles Ends */}
-            </div>
-          </TabPanel>
-          {/* Blog Content Ends */}
         </div>
       </Tabs>
     </div>

@@ -61,6 +61,9 @@ body {
   width: 100%;
   background-color: #111;
 }
+.cover {
+  object-fit: scale-down;
+}
 
 .poppins-font {
   font-family: "Poppins", sans-serif;
@@ -440,6 +443,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   letter-spacing: 10px;
   line-height: 0.7;
   position: absolute;
+  overflow: auto;
   right: 0;
   top: 50%;
   text-transform: uppercase;
@@ -1109,6 +1113,9 @@ body.light .contact .custom-span-contact a {
 .contact .contactform .form-group {
   margin-bottom: 30px;
 }
+.mb-6 {
+  margin-bottom: 3rem;
+}
 .contact {
   .container {
     padding-bottom: 60px;
@@ -1658,10 +1665,6 @@ body.light .contact .custom-span-contact a {
     font-size: 35px !important;
   }
 
-  .title-bg {
-    display: none;
-  }
-
   .custom-title {
     font-size: 21px;
   }
@@ -2016,7 +2019,7 @@ button:focus {
     }
     &:hover {
       &::before {
-        opacity: 1;
+        opacity: 0.8;
         visibility: visible;
       }
     }

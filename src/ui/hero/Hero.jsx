@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import Index from "../about/index";
+import ContactForm from "../components/Contact";
 
 const heroContent = {
-  heroImage: "/logo.png",
-  heroMobileImage: "/logo.png",
+  heroImage: "/img/logo.png",
+  heroMobileImage: "/img/logo.png",
   heroTitleName: "Suave Tech Solutions",
   heroDesignation: "Crypto Consortium",
-  heroDescriptions: `We are a New York City based development team experienced in web, mobile, and cryptocurrency application development as well as other software development needs. Our mission is to empower businesses through innovative tech solutions, while providing exceptional client support and delivering measurable results.
+  heroDescriptions: `We are a New York City based development team experienced in web, mobile, and blockchain application development as well as other software development needs. Our mission is to empower businesses through innovative tech solutions, while providing exceptional client support and delivering measurable results.
   Consult with us today!`,
   heroBtn: "Contact us",
 };
@@ -73,10 +73,20 @@ const Hero = () => {
                 <h1>
                   CONTACT <span>US</span>
                 </h1>
-                <span className="title-bg">CONTACT</span>
+                <span className="title-bg absolute">CONTACT</span>
               </div>
               {/* End title */}
-              
+              <div
+                className="contact container"
+              >
+                <div className="row">
+                  {/*  Contact Form Starts  */}
+                  <div className="col-12 mb-6">
+                    <ContactForm />
+                  </div>
+                  {/*  Contact Form Ends */}
+                </div>
+              </div>
             </div>
           </div>
         </div>

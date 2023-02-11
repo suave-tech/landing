@@ -14,6 +14,7 @@ const index = () => {
               What We Do
             </h3>
           </div>
+          
           <Skills />
         </div>
         {/* Skills Ends */}
