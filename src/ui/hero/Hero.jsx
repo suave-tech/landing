@@ -7,7 +7,7 @@ const heroContent = {
   heroMobileImage: "/img/logo.png",
   heroTitleName: "Suave Tech Solutions",
   heroDesignation: "Crypto Consortium",
-  heroDescriptions: `We are a development team experienced in web, mobile, and blockchain application development as well as other software development needs. Our mission is to empower businesses through consulting and innovative tech solutions, while providing client support and delivering measurable results.`,
+  heroDescriptions: `We are a development team experienced in web, mobile, and blockchain application development as well as other software development needs. Our mission is to empower businesses through expert consulting and creative tech solutions.`,
   heroBtn: "Contact us",
 };
 
