@@ -25,20 +25,22 @@ const Portfolio = () => {
     {
       company: "DataEarn",
       link: "app.dataearn.com",
-      img: "/img/companies/dataearn-logo.svg",
+      img: "/img/companies/dataearn-logo(1).png",
       preview: "/img/companies/dataearn-preview.png",
       languages: "NextTS, Python, Django, SQL",
       description: "DataEarn is building a way to allow individuals to access, understand, protect, and monetize their data.",
-      type: "Web App"
+      type: "Web App",
+      padding: 'p-6'
     },
     {
-      company: "Bonanza Exorsa",
-      link: "bonanzaexorsa.com",
-      img: "/img/companies/bonanza-3d-logo.png",
-      preview: "/img/companies/bonanza-preview.png",
-      languages: "NextTS, Solidity, Typescript",
-      description: "Bonanza Exorsa is a metaphysical brand using NFT's.",
-      type: "Blockchain"
+      company: "Raycon",
+      link: "rayconglobal.com",
+      img: "/img/companies/raycon-logo(1).png",
+      preview: "/img/companies/raycon-screenshot.png",
+      languages: "Javascript, React, Shopify, HTML, CSS",
+      description: "Raycon is an innovative sound system company, specializing in headphones.",
+      type: "Website",
+      padding: 'p-4'
     },
     {
       company: "Vita Films",
@@ -47,7 +49,18 @@ const Portfolio = () => {
       preview: "/img/companies/vita-preview.png",
       languages: "Nextjs, CSS",
       description: "Vita Film is a videography and media company specializing in outdoor, wedding, and commercial spaces.",
-      type: "Website"
+      type: "Website",
+      padding: 'p-4'
+    },
+    {
+      company: "Bonanza Exorsa",
+      link: "bonanzaexorsa.com",
+      img: "/img/companies/bonanza-3d-logo.png",
+      preview: "/img/companies/bonanza-preview.png",
+      languages: "NextTS, Solidity, Typescript",
+      description: "Bonanza Exorsa is a metaphysical brand using NFT's.",
+      type: "Blockchain",
+      padding: 'p-4'
     },
     {
       company: "Live Duel",
@@ -56,7 +69,8 @@ const Portfolio = () => {
       preview: "/img/companies/liveduel-preview.png",
       languages: "NextTS, Solidity, Typescript, SQL",
       description: "LiveDuel combines live streaming and interactive content like our prediction exchange and live trivia game show using blockchain technology.",
-      type: "Blockchain"
+      type: "Blockchain",
+      padding: 'p-2'
     },
     {
       company: "Sports Roulette ATL",
@@ -74,7 +88,8 @@ const Portfolio = () => {
       preview: "/img/companies/lazar-preview.png",
       languages: "HTML, CSS",
       description: "Lazar Stucco is an experienced contractor working with European Stucco for residential and commercial construction. ",
-      type: "Website"
+      type: "Website",
+      padding: 'p-4'
     }
   ]
 

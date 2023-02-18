@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState }) => {
+const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState, padding }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggle() {
@@ -12,7 +12,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
   return (
     <>
       <figure onClick={toggle} className="p-2">
-        <img src={img || "img/logo.png"} alt="Portolio" height="300" className="cover rounded" />
+        <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
         <div className=" hover-content-wrapper">
           <span className="content-title">{company}</span>
         </div>
