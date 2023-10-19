@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import {Tabs, Tab, TabPanel, TabList} from "react-tabs/lib/components/Tabs";
+
+import Project from "../page";
 import Modal from "react-modal";
 
 const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState, padding }) => {
@@ -11,13 +14,17 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
 
   return (
     <>
-      <figure onClick={toggle} className="p-2">
+    
+      {isOpen ? <></> : <div><figure onClick={toggle} className="p-2">
         <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
         <div className=" hover-content-wrapper">
           <span className="content-title">{company}</span>
         </div>
       </figure>
-
+      <Project props={company}/>
+      </div>   }
+    
+     
       <Modal
         isOpen={state || isOpen}
         onRequestClose={toggle}

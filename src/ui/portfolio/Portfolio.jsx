@@ -2,6 +2,7 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { PORTFOLIO_ITEMS } from "../../utils/companies";
 import PortfolioModalItem from "./modal";
+import Project from "./page/index"
 
 const Portfolio = () => {
   return (

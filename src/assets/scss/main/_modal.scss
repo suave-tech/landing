@@ -13,25 +13,23 @@
   }
 }
 .custom-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // position: fixed;
+  // top: 45%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   border: none;
   background: #fff;
   overflow: initial;
-  border-radius: 10px;
   outline: none;
   .box_inner {
-    height: 80vh;
-    width: 750px;
+    height: 100vh;
     overflow-y: auto;
-
-    width: 90vw;
+    width: 100vw;
     overflow-x: none;
     @media (min-width: 768px) {
-      max-width: 700px;
+      
     }
+
     &.blog-post {
       padding: 0 50px;
       @media (max-width: 767px) {
@@ -68,8 +66,8 @@
   height: 30px;
   position: absolute;
   z-index: 4;
-  right: -32px;
-  top: -32px;
+  right: 32px;
+  top: 32px;
   @media screen and (max-width: 1199px) {
     right: 0px;
     top: -48px;
