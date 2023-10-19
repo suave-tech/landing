@@ -44,6 +44,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
               <figure>
                 <figcaption>
                   <h3>{company}</h3>
+                  <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
                   <div className="row open-sans-font">
                     <div className="col-12 col-sm-6 mb-2">
                       <i className="fa fa-external-link pr-2"></i>
@@ -78,8 +79,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                     </div>
                   </div>
                 </figcaption>
-
-                <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
+                
               </figure>
             </div>
           </div>

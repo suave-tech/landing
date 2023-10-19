@@ -13,10 +13,10 @@
   }
 }
 .custom-modal {
-  // position: fixed;
-  // top: 45%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: none;
   background: #fff;
   overflow: initial;
@@ -25,9 +25,9 @@
     height: 100vh;
     overflow-y: auto;
     width: 100vw;
-    overflow-x: none;
+    overflow-x: auto;
     @media (min-width: 768px) {
-      
+
     }
 
     &.blog-post {
@@ -121,7 +121,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   border: 2px solid #fff;
 }
 .custom-modal.dark {
-  background: #252525;
+  background: #111;
   &.hero {
     background: #111;
   }
@@ -148,7 +148,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   }
 }
 
-// class used to disable scrolling on list underneath the Modal
+// class used to disable scrolling on page underneath the Modal
 .no-scroll {
   overflow: hidden
 }
