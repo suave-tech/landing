@@ -42,22 +42,26 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
             <figure className="border">
               <h3 className="company">{company}</h3>
               <div className="d-flex">
-                  <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
+                <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
                 <div className="col container open-sans-font">
                   <div className="row align-items-center my-5">
                     <h4 className="project-label ">About</h4>
                     <span className="ft-wt-600 uppercase col">{description}</span>
                   </div>
                   <div className="row align-items-center my-5">
-                    <h4 className="project-label \">Challenge </h4>
+                    <h4 className="project-label \">Mission</h4>
                     <span className="ft-wt-600 uppercase ">{languages}</span>
                   </div>
                 </div>
               </div>
             </figure>
-            <figure>
-              <div>
-                
+            <figure className="border">
+              <div className="d-flex align-items-center">
+                <div className="challenges">
+                  <h4>Challenges</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
+                </div>
+                <img className="wire_animation" src="/img/logo.png"></img>
               </div>
             </figure>
 
