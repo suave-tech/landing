@@ -19,7 +19,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
 
   return (
     <>
-       <figure onClick={toggle} className="p-2">
+      <figure onClick={toggle} className="p-2">
         <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
         <div className=" hover-content-wrapper">
           <span className="content-title">{company}</span>
@@ -38,50 +38,29 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
           <button className="close-modal" onClick={toggle}>
             <img src="/img/cancel.svg" alt="close icon" />
           </button>
-
           <div className="box_inner portfolio">
-            <div className="slideshow">
-              <figure>
-                <figcaption>
-                  <h3>{company}</h3>
+            <figure className="border">
+              <h3 className="company">{company}</h3>
+              <div className="d-flex">
                   <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
-                  <div className="row open-sans-font">
-                    <div className="col-12 col-sm-6 mb-2">
-                      <i className="fa fa-external-link pr-2"></i>
-                      <span className="project-label">Preview </span>:{" "}
-                      <span className="ft-wt-600 uppercase">
-                        <a
-                          href={`http://${link}`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {link}
-                        </a>
-                      </span>
-                    </div>
-
-                    <div className="col-12 col-sm-6 mb-2">
-                      <i className="fa fa-filter pr-2"></i>
-                      <span className="project-label">Type </span>:{" "}
-                      <span className="ft-wt-600 uppercase">{type}</span>
-                    </div>
-
-                    <div className="col-12 mb-2">
-                      <i className="fa fa-align-left pr-2"></i>
-                      <span className="project-label">Description </span>:{" "}
-                      <span className="ft-wt-600 uppercase">{description}</span>
-                    </div>
-
-                    <div className="col-12 mb-2">
-                      <i className="fa fa-code pr-2"></i>
-                      <span className="project-label">Langages </span>:{" "}
-                      <span className="ft-wt-600 uppercase">{languages}</span>
-                    </div>
+                <div className="col container open-sans-font">
+                  <div className="row align-items-center my-5">
+                    <h4 className="project-label ">About</h4>
+                    <span className="ft-wt-600 uppercase col">{description}</span>
                   </div>
-                </figcaption>
+                  <div className="row align-items-center my-5">
+                    <h4 className="project-label \">Challenge </h4>
+                    <span className="ft-wt-600 uppercase ">{languages}</span>
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <figure>
+              <div>
                 
-              </figure>
-            </div>
+              </div>
+            </figure>
+
           </div>
         </div>
       </Modal>
