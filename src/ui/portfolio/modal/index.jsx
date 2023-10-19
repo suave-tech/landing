@@ -1,30 +1,31 @@
 import React, { useState } from "react";
-import {Tabs, Tab, TabPanel, TabList} from "react-tabs/lib/components/Tabs";
-
-import Project from "../page";
 import Modal from "react-modal";
 
 const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState, padding }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggle() {
-    if(setState) setState(!state)
-    else setIsOpen(!isOpen);
+    if (isOpen || state) {
+      document.body.classList.remove("no-scroll"); // Enable scrolling
+    } else {
+      document.body.classList.add("no-scroll"); // Disable scrolling
+    }
+    if (setState) {
+      setState(!state);
+    } else {
+      setIsOpen(!isOpen);
+    }
   }
 
   return (
     <>
-    
-      {isOpen ? <></> : <div><figure onClick={toggle} className="p-2">
+       <figure onClick={toggle} className="p-2">
         <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
         <div className=" hover-content-wrapper">
           <span className="content-title">{company}</span>
         </div>
       </figure>
-      <Project props={company}/>
-      </div>   }
-    
-     
+
       <Modal
         isOpen={state || isOpen}
         onRequestClose={toggle}
@@ -39,48 +40,48 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
           </button>
 
           <div className="box_inner portfolio">
-          <div className="slideshow">
-          <figure>
-            <figcaption>
-              <h3>{company}</h3>
-              <div className="row open-sans-font">
-                <div className="col-12 col-sm-6 mb-2">
-                  <i className="fa fa-external-link pr-2"></i>
-                  <span className="project-label">Preview </span>:{" "}
-                  <span className="ft-wt-600 uppercase">
-                    <a
-                      href={`http://${link}`}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link}
-                    </a>
-                  </span>
-                </div>
+            <div className="slideshow">
+              <figure>
+                <figcaption>
+                  <h3>{company}</h3>
+                  <div className="row open-sans-font">
+                    <div className="col-12 col-sm-6 mb-2">
+                      <i className="fa fa-external-link pr-2"></i>
+                      <span className="project-label">Preview </span>:{" "}
+                      <span className="ft-wt-600 uppercase">
+                        <a
+                          href={`http://${link}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {link}
+                        </a>
+                      </span>
+                    </div>
 
-                <div className="col-12 col-sm-6 mb-2">
-                  <i className="fa fa-filter pr-2"></i>
-                  <span className="project-label">Type </span>:{" "}
-                  <span className="ft-wt-600 uppercase">{type}</span>
-                </div>
-                
-                <div className="col-12 mb-2">
-                  <i className="fa fa-align-left pr-2"></i>
-                  <span className="project-label">Description </span>:{" "}
-                  <span className="ft-wt-600 uppercase">{description}</span>
-                </div>
+                    <div className="col-12 col-sm-6 mb-2">
+                      <i className="fa fa-filter pr-2"></i>
+                      <span className="project-label">Type </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{type}</span>
+                    </div>
 
-                <div className="col-12 mb-2">
-                  <i className="fa fa-code pr-2"></i>
-                  <span className="project-label">Langages </span>:{" "}
-                  <span className="ft-wt-600 uppercase">{languages}</span>
-                </div>
-              </div>
-            </figcaption>
+                    <div className="col-12 mb-2">
+                      <i className="fa fa-align-left pr-2"></i>
+                      <span className="project-label">Description </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{description}</span>
+                    </div>
 
-            <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
-          </figure>
-        </div>
+                    <div className="col-12 mb-2">
+                      <i className="fa fa-code pr-2"></i>
+                      <span className="project-label">Langages </span>:{" "}
+                      <span className="ft-wt-600 uppercase">{languages}</span>
+                    </div>
+                  </div>
+                </figcaption>
+
+                <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
+              </figure>
+            </div>
           </div>
         </div>
       </Modal>

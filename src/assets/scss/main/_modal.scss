@@ -139,13 +139,16 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     &.portfolio {
       @media (min-width: 1600px) {
         width: 660px;
-        max-height: 90vh;
         overflow-y: auto;
       }
       @media (max-width: 1499px) {
-        max-height: 90vh;
         overflow-y: auto;
       }
     }
   }
+}
+
+// class used to disable scrolling on list underneath the Modal
+.no-scroll {
+  overflow: hidden
 }
