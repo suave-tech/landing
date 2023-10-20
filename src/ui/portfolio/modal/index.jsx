@@ -3,6 +3,7 @@ import Modal from "react-modal";
 
 const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState, padding }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const pics = preview
 
   function toggle() {
     if (isOpen || state) {
@@ -45,7 +46,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
             </div>
             <div className="slate">
               <div className="d-flex">
-                <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
+                <img src={preview[0] || "img/logo.png"} alt={`${company} preview`} className="cover" />
                 <div className="col container open-sans-font">
                   <div className="row align-items-center my-5 mx-2">
                     <h4 className="project-label ">About</h4>
@@ -64,14 +65,28 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                   <h4>Challenges</h4>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
                 </div>
-                <img className="cover" src="/img/logo.png"></img>
+                <img className="cover" src="/img/logo.png" alt="site"></img>
               </div>
             </div>
             <div className="slate">
-              <div className="carousel">
-                <ol>
-                  
-                </ol>
+              <div className="carousel align-items-center d-flex">
+                <button>
+                  <img src='/img/left-arrow.png'/>
+                </button>
+                <ul className="d-flex">
+                  <li>
+                    <img src={pics[0]}/>
+                  </li>
+                  <li className="vh-20">
+                    <img src={pics[1]} />
+                  </li>
+                  <li>
+                    <img src={pics[2]}/>
+                  </li>
+                </ul>
+                <button>
+                  <img src='/img/right-arrow.png'/>
+                </button>
               </div>
             </div>
 
