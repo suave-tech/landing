@@ -19,7 +19,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
 
   return (
     <>
-      <figure onClick={toggle} className="p-2">
+      <figure onClick={toggle} className="logo p-2">
         <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
         <div className=" hover-content-wrapper">
           <span className="content-title">{company}</span>
@@ -39,7 +39,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
             <img src="/img/cancel.svg" alt="close icon" />
           </button>
           <div className="box_inner portfolio">
-            <figure className="border">
+            <div className="slate">
               <h3 className="company">{company}</h3>
               <div className="d-flex">
                 <img src={preview || "img/logo.png"} alt={`${company} preview`} className="cover" />
@@ -54,8 +54,8 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                   </div>
                 </div>
               </div>
-            </figure>
-            <figure className="border">
+            </div>
+            <div className="slate">
               <div className="d-flex align-items-center">
                 <div className="challenges">
                   <h4>Challenges</h4>
@@ -63,7 +63,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                 </div>
                 <img className="wire_animation" src="/img/logo.png"></img>
               </div>
-            </figure>
+            </div>
 
           </div>
         </div>
