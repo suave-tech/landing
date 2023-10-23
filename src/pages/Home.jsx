@@ -1,9 +1,9 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Hero from "../ui/hero/Hero";
-import Index from "../ui/about/index";
+// import Index from "../ui/about/index";
 import Portfolio from "../ui/portfolio/Portfolio";
-import Blog from "../ui/blog/Blog";
+// import Blog from "../ui/blog/Blog";
 import Contact from "../ui/components/Contact";
 
 const menuItem = [

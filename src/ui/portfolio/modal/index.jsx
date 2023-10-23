@@ -3,7 +3,7 @@ import Modal from "react-modal";
 
 const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState, padding }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const pics = preview
+
 
   function toggle() {
     if (isOpen || state) {
@@ -16,6 +16,24 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
     } else {
       setIsOpen(!isOpen);
     }
+  }
+
+  const [pics, setPics] = useState(preview)
+
+  const handleLeft = () => {
+    let arr = [...pics]
+    let first = arr.shift()
+    arr.push(first)
+    setPics(arr)
+    console.log('handleLeft setPics:', arr)
+  }
+
+  const handleRight = () => {
+    let arr = [...pics]
+    let last = arr.pop()
+    arr.unshift(last)
+    setPics(arr)
+    console.log('handleRight setPics:', arr)
   }
 
   return (
@@ -59,33 +77,38 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                 </div>
               </div>
             </div>
+            <div className="svg-container">
+              <svg width="1151" height="510" viewBox="0 0 1151 510" fill="none" preserveAspectRatio="xMidYMax">
+                <path d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5ZM1130 41.5V240.5M1130 240.5L1148 250V268.5L1130 278.5L1110.5 268.5V259.25M1130 240.5L1110.5 250V259.25M1110.5 259.25H40M40 259.25V249.5L21.5 240L3 249.5V269L21.5 279M40 259.25V269L21.5 279M21.5 279V468M21.5 468L40 478V497L21.5 507L3 497V478L21.5 468Z" stroke="white" stroke-width="5" />
+              </svg>
+            </div>
             <div className="slate">
               <div className="d-flex align-items-center">
                 <div className="challenges">
                   <h4>Challenges</h4>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
                 </div>
-                <img className="cover" src="/img/logo.png" alt="site"></img>
+                <img className="cover" src={`${preview[1]}`} alt="site"></img>
               </div>
             </div>
             <div className="slate">
               <div className="carousel align-items-center d-flex">
-                <button>
-                  <img src='/img/left-arrow.png'/>
+                <button onClick={handleLeft}>
+                  <img src='/img/left-arrow.png' alt='left-arrow'/>
                 </button>
-                <ul className="d-flex">
-                  <li>
-                    <img src={pics[0]}/>
-                  </li>
-                  <li className="vh-20">
-                    <img src={pics[1]} />
-                  </li>
-                  <li>
-                    <img src={pics[2]}/>
-                  </li>
+                <ul className="d-flex carousel-ul">
+                  {pics.map((pic) => {
+                    return (
+                      <li>
+                        <img src={pic} alt={`carousel-${pics.indexOf(pic)}`} className={`carousel-images img-${pics.indexOf(pic)}`} />{
+                          console.log(pics.indexOf(pic))
+                        }
+                      </li>
+                    )
+                  })}
                 </ul>
-                <button>
-                  <img src='/img/right-arrow.png'/>
+                <button onClick={handleRight}>
+                  <img src='/img/right-arrow.png' alt='right-arrow'/>
                 </button>
               </div>
             </div>

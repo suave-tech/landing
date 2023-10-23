@@ -3,7 +3,7 @@ export const PORTFOLIO_ITEMS = [
       company: "VMEX Finance",
       link: "vmex.finance",
       img: "/img/companies/vmex-logo.svg",
-      preview: ["/img/companies/vmex-preview.png","/img/companies/vmex-preview.png","/img/companies/vmex-preview.png"],
+      preview: ["/img/companies/vmex-preview.png","/img/companies/vmex-preview-2.png","/img/companies/vmex-preview-3.png"],
       languages: "NextTS, Solidity, Typescript, SQL",
       description: "VMEX Finance provides decentralized, next-generation liquidity markets.",
       type: "Blockchain"
