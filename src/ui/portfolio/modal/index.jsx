@@ -1,5 +1,45 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Modal from "react-modal";
+
+const divVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 1
+    }
+  }
+}
+const pathVariants = {
+  hidden: {
+    pathLength: 0
+  },
+  visible: {
+    pathLength: 1,
+    transition: {
+      duration: 0.75,
+      ease: 'easeInOut'
+    }
+  }
+}
+
+const slateVariants = {
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1
+  }
+}
+
+const chalVariants = {
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1
+  }
+}
 
 const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState, padding }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,8 +88,10 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
       <Modal
         isOpen={state || isOpen}
         onRequestClose={toggle}
+        
         contentLabel="My dialog"
         className="custom-modal dark"
+        
         overlayClassName="custom-overlay dark"
         closeTimeoutMS={500}
       >
@@ -64,7 +106,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
             </div>
             <div className="slate">
               <div className="d-flex">
-                <img src={preview[0] || "img/logo.png"} alt={`${company} preview`} className="cover" />
+                <img src={preview[1] || "img/logo.png"} alt={`${company} preview`} className="cover" />
                 <div className="col container open-sans-font">
                   <div className="row align-items-center my-5 mx-2">
                     <h4 className="project-label ">About</h4>
@@ -78,23 +120,28 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
               </div>
             </div>
             <div className="svg-container">
-              <svg width="1151" height="510" viewBox="0 0 1151 510" fill="none" preserveAspectRatio="xMidYMax">
-                <path d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5ZM1130 41.5V240.5M1130 240.5L1148 250V268.5L1130 278.5L1110.5 268.5V259.25M1130 240.5L1110.5 250V259.25M1110.5 259.25H40M40 259.25V249.5L21.5 240L3 249.5V269L21.5 279M40 259.25V269L21.5 279M21.5 279V468M21.5 468L40 478V497L21.5 507L3 497V478L21.5 468Z" stroke="white" stroke-width="5" />
-              </svg>
+              <motion.svg variants={divVariants} initial="hidden" animate="visible" viewBox="0 0 1151 510" fill="none">
+                {/* <!-- hexagon at the top right --> */}
+                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants}  d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5Z" stroke="#ffb400" stroke-width="5" />
+                {/* Horizontal and vertical lines */}
+                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants}  d="M1130 41.5V259.25H21.5V468" stroke="#ffb400" stroke-width="5" />
+                {/* <!-- hexagon at the bottom left --> */}
+                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants}  d="M21.5 468L40 478V497L21.5 507L3 497V478L21.5 468Z" stroke="#ffb400" stroke-width="5" />
+              </motion.svg>
             </div>
             <div className="slate">
-              <div className="d-flex align-items-center">
-                <div className="challenges">
+              <motion.div variant={slateVariants} initial="hidden" animate="visible" className="d-flex align-items-center">
+                <motion.div variant={chalVariants} initial="hidden" animate="visible" className="challenges">
                   <h4>Challenges</h4>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
-                </div>
-                <img className="cover" src={`${preview[1]}`} alt="site"></img>
-              </div>
+                </motion.div>
+                <motion.img initial="hidden" animate="visible" variant={chalVariants} className="cover" src={`${preview[2]}`} alt="site" />
+              </motion.div>
             </div>
             <div className="slate">
               <div className="carousel align-items-center d-flex">
                 <button onClick={handleLeft}>
-                  <img src='/img/left-arrow.png' alt='left-arrow'/>
+                  <img src='/img/left-arrow.png' alt='left-arrow' />
                 </button>
                 <ul className="d-flex carousel-ul">
                   {pics.map((pic) => {
@@ -108,7 +155,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                   })}
                 </ul>
                 <button onClick={handleRight}>
-                  <img src='/img/right-arrow.png' alt='right-arrow'/>
+                  <img src='/img/right-arrow.png' alt='right-arrow' />
                 </button>
               </div>
             </div>
