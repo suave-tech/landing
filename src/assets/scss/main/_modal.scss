@@ -8,10 +8,12 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.65);
   z-index: 99;
+
   &.dark {
     background-color: rgba(0, 0, 0, 0.9);
   }
 }
+
 .custom-modal {
   // transform: translate(-50%, -50%);
   border: none;
@@ -21,6 +23,7 @@
   animation: slideInFromTop 0.9s cubic-bezier(0.77, 0, 0.175, 1) both;
   top: 0px;
   left: 0px;
+
   .box_inner {
     height: 100vh;
     overflow-y: auto;
@@ -32,11 +35,14 @@
 
     &.blog-post {
       padding: 0 50px;
+
       @media (max-width: 767px) {
         padding: 0 15px;
       }
+
       .title-section {
         padding: 50px 0;
+
         @media (max-width: 767px) {
           padding: 50px 0 20px;
         }
@@ -49,6 +55,7 @@
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -75,25 +82,30 @@
   width: 30px;
   height: 30px;
   position: relative;
+
   @media screen and (max-width: 1199px) {
     right: 0px;
     top: -48px;
   }
+
   @media screen and (max-width: 575px) {
     right: 10px;
     top: -37px;
   }
+
   img {
     cursor: pointer;
     position: absolute;
-  
+
     filter: invert(1);
     transition: 0.3s;
+
     @media screen and (max-width: 575px) {
       width: 30px;
       height: 30px;
     }
   }
+
   &:hover {
     img {
       filter: invert(0.8);
@@ -102,38 +114,53 @@
 }
 
 .custom-modal.dark .box_inner::-webkit-scrollbar {
-  width: 8px; /* width of the entire scrollbar */
+  width: 8px;
+  /* width of the entire scrollbar */
 }
 
 .custom-modal.dark .box_inner::-webkit-scrollbar-track {
-  background: #333; /* color of the tracking area */
+  background: #333;
+  /* color of the tracking area */
 }
 
 .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
-  background-color: #555; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 1px solid #333; /* creates padding around scroll thumb */
+  background-color: #555;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 1px solid #333;
+  /* creates padding around scroll thumb */
 }
+
 body.light .custom-modal.dark .box_inner::-webkit-scrollbar-track {
-  background: #fff; /* color of the tracking area */
+  background: #fff;
+  /* color of the tracking area */
 }
 
 body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
-  background-color: #bbb; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 1px solid #fff; /* creates padding around scroll thumb */
+  background-color: #bbb;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 1px solid #fff;
+  /* creates padding around scroll thumb */
 }
+
 .custom-modal.dark.light .box_inner.about {
   border: 2px solid #fff;
 }
+
 .custom-modal.dark {
   background: #111;
+
   &.hero {
     background: #111;
   }
+
   &.light {
     background: #fff;
   }
+
   .box_inner {
     &.about {
       border-radius: 5px;
@@ -142,14 +169,15 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
       max-width: 800px;
       border: 2px solid #222;
     }
+
     // &.portfolio {
-      // @media (min-width: 1600px) {
-      //   width: 660px;
-      //   overflow-y: auto;
-      // }
-      // @media (max-width: 1499px) {
-      //   overflow-y: auto;
-      // }
+    // @media (min-width: 1600px) {
+    //   width: 660px;
+    //   overflow-y: auto;
+    // }
+    // @media (max-width: 1499px) {
+    //   overflow-y: auto;
+    // }
     // }
   }
 }
@@ -165,45 +193,78 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   padding-top: 2rem;
   padding-left: 4rem;
   padding-right: 4rem;
+
   img {
     border-radius: 6px;
     width: 50%;
   }
+
   .challenges {
     width: 50%;
   }
 }
+
 .svg-container {
   margin-left: 20rem;
   margin-right: 20rem;
 }
 
-.project-header{
+.project-header {
   margin-left: 4rem;
   border-bottom: 2px solid #ffb400;
+
   .company {
     margin-top: 4rem;
-    
+
   }
 }
 
 .carousel {
   background-color: #ffb400;
-  height: 50%;
+  height: 40vh;
+  .carousel-images {
+    position: relative;
+    border-radius: 10px;
+    border: 2px solid red;
+    height: 400px;
+    max-width: 650px;
+    margin: auto;
+    overflow: hidden;
+    img {
+      border-radius: 8px;
+    }
+  }
+  .slide_direction {
+    display: flex;
+    justify-content: space-between;
+  }
+  .carousel-indicator {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .dot {
+    background-color: #333;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  .active {
+    background-color: #fffcfc;
+  }
+
   button {
     background: transparent;
     border: transparent;
-    width:200px;
-    height: 200px;
+    width: 100px;
   }
 }
 
-.carousel-ul{
+.carousel-ul {
   list-style: none;
 }
 
-.carousel-images{
+.carousel-images {
   max-height: 500px;
-  
 }
-
