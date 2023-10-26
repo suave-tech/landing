@@ -75,43 +75,7 @@
   opacity: 0;
 }
 
-.close-modal {
-  background: transparent;
-  border: none;
-  display: flex;
-  width: 30px;
-  height: 30px;
-  position: relative;
 
-  @media screen and (max-width: 1199px) {
-    right: 0px;
-    top: -48px;
-  }
-
-  @media screen and (max-width: 575px) {
-    right: 10px;
-    top: -37px;
-  }
-
-  img {
-    cursor: pointer;
-    position: absolute;
-
-    filter: invert(1);
-    transition: 0.3s;
-
-    @media screen and (max-width: 575px) {
-      width: 30px;
-      height: 30px;
-    }
-  }
-
-  &:hover {
-    img {
-      filter: invert(0.8);
-    }
-  }
-}
 
 .custom-modal.dark .box_inner::-webkit-scrollbar {
   width: 8px;
@@ -187,6 +151,74 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   overflow: hidden
 }
 
+.modal-logo {
+  margin-top: 3rem;
+  height: 150px;
+}
+.project-header {
+  margin: 0;
+  margin-left: 4rem;
+  border-bottom: 4px solid #ffb400;
+
+  .company {
+    margin-top: 3rem;
+    text-transform: uppercase;
+    z-index: 3;
+    
+  }
+  .company-h3 {
+  margin-bottom: 3rem;
+  font-size: 32px;
+  line-height: 1.3;
+  color: #363636;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  }
+  .company-logo {
+    height: 200px;
+    top: 20;
+    left: 50;
+  }
+}
+
+.close-modal {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  right: 25px;
+  top: 25px;
+
+  @media screen and (max-width: 1199px) {
+    right: 0px;
+    top: -48px;
+  }
+
+  @media screen and (max-width: 575px) {
+    right: 10px;
+    top: -37px;
+  }
+
+  img {
+    cursor: pointer;
+    position: absolute;
+
+    filter: invert(1);
+    transition: 0.3s;
+
+    @media screen and (max-width: 575px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &:hover {
+    img {
+      filter: invert(0.8);
+    }
+  }
+}
+
 .slate {
   width: 100%;
   background: #111;
@@ -209,62 +241,65 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   margin-right: 20rem;
 }
 
-.project-header {
-  margin-left: 4rem;
-  border-bottom: 2px solid #ffb400;
 
-  .company {
-    margin-top: 4rem;
 
-  }
-}
+/////// Carousel \\\\\\\\\\\
 
 .carousel {
   background-color: #ffb400;
   height: 40vh;
+  display: flex;
+  justify-content: space-between;
+
   .carousel-images {
     position: relative;
     border-radius: 10px;
-    border: 2px solid red;
-    height: 400px;
+    
     max-width: 650px;
     margin: auto;
     overflow: hidden;
+
     img {
+      width: 99%;
+      height: 99%;
       border-radius: 8px;
     }
   }
-  .slide_direction {
-    display: flex;
-    justify-content: space-between;
+  .left,
+  .right {
+    background-color: #ffb400;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 10px;
+    height: 100px;
+    width: 100px;
+    border: none;
   }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+
   .carousel-indicator {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
   }
+
   .dot {
     background-color: #333;
     width: 15px;
     height: 15px;
     border-radius: 50%;
   }
+
   .active {
     background-color: #fffcfc;
   }
-
-  button {
-    background: transparent;
-    border: transparent;
-    width: 100px;
-  }
-}
-
-.carousel-ul {
-  list-style: none;
-}
-
-.carousel-images {
-  max-height: 500px;
 }

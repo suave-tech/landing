@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Modal from "react-modal";
+import Carousel from "./Carousel";
 
 const divVariants = {
   hidden: {},
@@ -24,20 +25,20 @@ const pathVariants = {
 }
 
 const slateVariants = {
-  hidden:{
-    opacity:0
+  hidden: {
+    opacity: 0
   },
-  visible:{
-    opacity:1
+  visible: {
+    opacity: 1
   }
 }
 
 const chalVariants = {
-  hidden:{
-    opacity:0
+  hidden: {
+    opacity: 0
   },
-  visible:{
-    opacity:1
+  visible: {
+    opacity: 1
   }
 }
 
@@ -58,23 +59,8 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
     }
   }
 
-  const [pics, setPics] = useState(preview)
 
-  const handleLeft = () => {
-    let arr = [...pics]
-    let first = arr.shift()
-    arr.push(first)
-    setPics(arr)
-    console.log('handleLeft setPics:', arr)
-  }
 
-  const handleRight = () => {
-    let arr = [...pics]
-    let last = arr.pop()
-    arr.unshift(last)
-    setPics(arr)
-    console.log('handleRight setPics:', arr)
-  }
 
   return (
     <>
@@ -88,21 +74,34 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
       <Modal
         isOpen={state || isOpen}
         onRequestClose={toggle}
-        
+
         contentLabel="My dialog"
         className="custom-modal dark"
-        
+
         overlayClassName="custom-overlay dark"
         closeTimeoutMS={500}
       >
         <div>
-
           <div className="box_inner portfolio">
-            <div className="project-header d-flex justify-content-between">
-              <h3 className="company">{company}</h3>
-              <button className="close-modal m-2" onClick={toggle}>
-                <img src="/img/cancel.svg" alt="close icon" />
-              </button>
+            <div className="project-header container border ">
+              <div className="row">
+                <div className="border col">
+                  <img src='img/logo.png' className="modal-logo" alt='sauve' />
+
+                  <h1 className="company ">
+                    {company}
+                  </h1>
+                  <h3 className="company-h3">{type}</h3>
+                </div>
+                <div className="border col">
+                  <img src={`${img}`} className="company-logo" />
+                </div>
+                <div className="border col">
+                  <div className="close-modal" onClick={toggle}>
+                    <img src="/img/exit.png" alt="close icon" />
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="slate">
               <div className="d-flex">
@@ -122,11 +121,11 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
             <div className="svg-container">
               <motion.svg variants={divVariants} initial="hidden" animate="visible" viewBox="0 0 1151 510" fill="none">
                 {/* <!-- hexagon at the top right --> */}
-                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants}  d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5Z" stroke="#ffb400" stroke-width="5" />
+                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5Z" stroke="#ffb400" stroke-width="5" />
                 {/* Horizontal and vertical lines */}
-                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants}  d="M1130 41.5V259.25H21.5V468" stroke="#ffb400" stroke-width="5" />
+                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M1130 41.5V259.25H21.5V468" stroke="#ffb400" stroke-width="5" />
                 {/* <!-- hexagon at the bottom left --> */}
-                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants}  d="M21.5 468L40 478V497L21.5 507L3 497V478L21.5 468Z" stroke="#ffb400" stroke-width="5" />
+                <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M21.5 468L40 478V497L21.5 507L3 497V478L21.5 468Z" stroke="#ffb400" stroke-width="5" />
               </motion.svg>
             </div>
             <div className="slate">
@@ -139,25 +138,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
               </motion.div>
             </div>
             <div className="slate">
-              <div className="carousel align-items-center d-flex">
-                <button onClick={handleLeft}>
-                  <img src='/img/left-arrow.png' alt='left-arrow' />
-                </button>
-                <ul className="d-flex carousel-ul">
-                  {pics.map((pic) => {
-                    return (
-                      <li>
-                        <img src={pic} alt={`carousel-${pics.indexOf(pic)}`} className={`carousel-images img-${pics.indexOf(pic)}`} />{
-                          console.log(pics.indexOf(pic))
-                        }
-                      </li>
-                    )
-                  })}
-                </ul>
-                <button onClick={handleRight}>
-                  <img src='/img/right-arrow.png' alt='right-arrow' />
-                </button>
-              </div>
+              <Carousel preview={preview} />
             </div>
 
           </div>
