@@ -1,8 +1,23 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import React, { useState, useRef } from "react";
 import Modal from "react-modal";
 import Carousel from "./Carousel";
 
+///// variant objects to control animations
+
+const headerChild = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1,
+      duration: 0.5
+    }
+  }
+}
 const divVariants = {
   hidden: {},
   visible: {
@@ -43,14 +58,30 @@ const chalVariants = {
 }
 
 const PortfolioModalItem = ({ img, company, languages, link, description, preview, type, state, setState, padding }) => {
+
+  /// controls modal open when clicking on company icon
   const [isOpen, setIsOpen] = useState(false);
+  const modalContentRef = useRef(null);
 
+  // refs for use in animation of element when in view
+  // ref for svg line 
+  const [ref1, inView1] = useInView({ threshold: 0.5, triggerOnce: true })
+  //ref for Challenges
+  const [ref2, inView2] = useInView({ threshold: 0.3, triggerOnce: true })
+  //ref for line
+  const [ref3, inView3] = useInView({ threshold: 0.3, triggerOnce: true })
+  const [ref4, inView4] = useInView({ threshold: 0.3, triggerOnce: true })
 
+  //function open Model also disable scrolling on portfolio page underneath
   function toggle() {
     if (isOpen || state) {
       document.body.classList.remove("no-scroll"); // Enable scrolling
+
     } else {
       document.body.classList.add("no-scroll"); // Disable scrolling
+      if (modalContentRef.current) {
+        modalContentRef.current.scrollTop = 0;
+      }
     }
     if (setState) {
       setState(!state);
@@ -74,29 +105,39 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
       <Modal
         isOpen={state || isOpen}
         onRequestClose={toggle}
-
         contentLabel="My dialog"
         className="custom-modal dark"
-
         overlayClassName="custom-overlay dark"
         closeTimeoutMS={500}
-      >
-        <div>
-          <div className="box_inner portfolio">
-            <div className="project-header container border ">
-              <div className="row">
-                <div className="border col">
-                  <img src='img/logo.png' className="modal-logo" alt='sauve' />
 
-                  <h1 className="company ">
-                    {company}
-                  </h1>
-                  <h3 className="company-h3">{type}</h3>
+      >
+        <div ref={modalContentRef} >
+          <div className="box_inner portfolio">
+            <div className="project-header container-fluid  ">
+              <div className="row justify-content-around">
+                <div className="col">
+                  <img
+                    variants={headerChild}
+                    src='img/logo.png' className="modal-logo" alt='sauve' />
+                  <motion.h1
+                    variants={headerChild}
+                    initial="hidden"
+                    animate="visible"
+                    className="company ">{company}</motion.h1>
+                  <motion.h3
+                    variants={headerChild}
+                    initial="hidden"
+                    animate="visible"
+                    className="company-h3">{type}</motion.h3>
                 </div>
-                <div className="border col">
-                  <img src={`${img}`} className="company-logo" />
+                <div className="col align-self-center text-center">
+                  <motion.img
+                    variants={headerChild}
+                    initial='hidden'
+                    animate='visible'
+                    src={`${img}`} className="company-logo" />
                 </div>
-                <div className="border col">
+                <div className="col d-flex justify-content-end pt-2">
                   <div className="close-modal" onClick={toggle}>
                     <img src="/img/exit.png" alt="close icon" />
                   </div>
@@ -105,8 +146,17 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
             </div>
             <div className="slate">
               <div className="d-flex">
-                <img src={preview[1] || "img/logo.png"} alt={`${company} preview`} className="cover" />
-                <div className="col container open-sans-font">
+                <motion.img
+                  variants={headerChild}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                  src={preview[1] || "img/logo.png"} alt={`${company} preview`} className="cover" />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
+                  className="col container open-sans-font">
                   <div className="row align-items-center my-5 mx-2">
                     <h4 className="project-label ">About</h4>
                     <span className="ft-wt-600 uppercase col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sed in atque incidunt, reiciendis saepe neque quibusdam delectus iusto illum eius quia velit. Nihil explicabo iure est inventore omnis laboriosam, odio dicta, dolores quaerat natus fugit saepe perferendis doloremque quam.</span>
@@ -115,11 +165,43 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                     <h4 className="project-label \">Mission</h4>
                     <span className="ft-wt-600 uppercase ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quasi a dicta ratione, placeat harum, at fugit atque illum dolorum voluptates eius doloribus maiores quia laudantium! Omnis in molestiae quae aliquid ut iusto! Nobis odio iusto dicta soluta sit veritatis.</span>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
             <div className="svg-container">
-              <motion.svg variants={divVariants} initial="hidden" animate="visible" viewBox="0 0 1151 510" fill="none">
+              <motion.svg
+                ref={ref3}
+                variants={divVariants} initial="hidden"
+                animate={inView3 ? "visible" : "hidden"} viewBox="0 0 1151 510" fill="none">
+                {/* <!-- hexagon at the top left --> */}
+                <motion.path variants={pathVariants} d="M21.5 32.5L40 41.5V61L21.5 71L3 61V41.5L21.5 32.5Z" stroke="#ffb400" stroke-width="5" />
+                {/* Vertical line */}
+                <motion.path variants={pathVariants} d="M21.5 71V468" stroke="#ffb400" stroke-width="5" />
+                {/* <!-- hexagon at the bottom left --> */}
+                <motion.path variants={pathVariants} d="M21.5 468L40 478V497L21.5 507L3 497V478L21.5 468Z" stroke="#ffb400" stroke-width="5" />
+              </motion.svg>
+            </div>
+            <div className="slate">
+            <motion.div className="d-flex align-items-center">
+                <motion.div
+                  ref={ref4}
+                  initial={{ opacity: 0 }}
+                  animate={inView4 ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="challenges">
+                  <h4>Challenges</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
+                </motion.div>
+                <motion.img ref={ref4}
+                  initial={{ opacity: 0 }}
+                  animate={inView4 ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="cover" src={`${preview[2]}`} alt="site" />
+              </motion.div>
+            </div>
+            <div className="svg-container">
+              <motion.svg
+                ref={ref1}
+                variants={divVariants} initial="hidden"
+                animate={inView1 ? "visible" : "hidden"} viewBox="0 0 1151 510" fill="none">
                 {/* <!-- hexagon at the top right --> */}
                 <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5Z" stroke="#ffb400" stroke-width="5" />
                 {/* Horizontal and vertical lines */}
@@ -129,12 +211,19 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
               </motion.svg>
             </div>
             <div className="slate">
-              <motion.div variant={slateVariants} initial="hidden" animate="visible" className="d-flex align-items-center">
-                <motion.div variant={chalVariants} initial="hidden" animate="visible" className="challenges">
-                  <h4>Challenges</h4>
+              <motion.div className="d-flex align-items-center">
+              <motion.img ref={ref2}
+                  initial={{ opacity: 0 }}
+                  animate={inView2 ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="cover" src={`${preview[2]}`} alt="site" />
+                <motion.div
+                  ref={ref2}
+                  initial={{ opacity: 0 }}
+                  animate={inView2 ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="col container open-sans-font">
+                  <h4>Conclusion</h4>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
                 </motion.div>
-                <motion.img initial="hidden" animate="visible" variant={chalVariants} className="cover" src={`${preview[2]}`} alt="site" />
               </motion.div>
             </div>
             <div className="slate">

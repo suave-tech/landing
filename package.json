@@ -14,6 +14,7 @@
     "react-animated-cursor": "^2.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.6.3",
+    "react-intersection-observer": "^9.5.2",
     "react-modal": "^3.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

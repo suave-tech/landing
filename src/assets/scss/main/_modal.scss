@@ -157,7 +157,6 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 }
 .project-header {
   margin: 0;
-  margin-left: 4rem;
   border-bottom: 4px solid #ffb400;
 
   .company {
@@ -183,11 +182,9 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 }
 
 .close-modal {
+  position: relative;
   width: 30px;
   height: 30px;
-  position: relative;
-  right: 25px;
-  top: 25px;
 
   @media screen and (max-width: 1199px) {
     right: 0px;
