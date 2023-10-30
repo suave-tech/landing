@@ -8,14 +8,12 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.65);
   z-index: 99;
-
   &.dark {
     background-color: rgba(0, 0, 0, 0.9);
   }
 }
 
 .custom-modal {
-  // transform: translate(-50%, -50%);
   border: none;
   background: #fff;
   overflow: initial;
@@ -29,25 +27,15 @@
     overflow-y: auto;
     width: 100vw;
     overflow-x: auto;
-    // @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
 
-    // }
-
-    &.blog-post {
-      padding: 0 50px;
-
-      @media (max-width: 767px) {
-        padding: 0 15px;
-      }
-
-      .title-section {
-        padding: 50px 0;
-
-        @media (max-width: 767px) {
-          padding: 50px 0 20px;
-        }
-      }
-    }
+  }
+  .modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -74,8 +62,6 @@
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
-
-
 
 .custom-modal.dark .box_inner::-webkit-scrollbar {
   width: 8px;
@@ -116,7 +102,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 
 .custom-modal.dark {
   background: #111;
-
+  
   &.hero {
     background: #111;
   }
@@ -125,25 +111,6 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     background: #fff;
   }
 
-  .box_inner {
-    &.about {
-      border-radius: 5px;
-      width: 90vw;
-      overflow-x: none;
-      max-width: 800px;
-      border: 2px solid #222;
-    }
-
-    // &.portfolio {
-    // @media (min-width: 1600px) {
-    //   width: 660px;
-    //   overflow-y: auto;
-    // }
-    // @media (max-width: 1499px) {
-    //   overflow-y: auto;
-    // }
-    // }
-  }
 }
 
 // class used to disable scrolling on page underneath the Modal
@@ -152,11 +119,12 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 }
 
 .modal-logo {
-  margin-top: 3rem;
-  height: 150px;
+  margin-top: 1rem;
+  height: 100px;
 }
 .project-header {
   margin: 0;
+  height: 35vh;
   border-bottom: 4px solid #ffb400;
 
   .company {
@@ -198,21 +166,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 
   img {
     cursor: pointer;
-    position: absolute;
-
     filter: invert(1);
-    transition: 0.3s;
-
-    @media screen and (max-width: 575px) {
-      width: 30px;
-      height: 30px;
-    }
-  }
-
-  &:hover {
-    img {
-      filter: invert(0.8);
-    }
   }
 }
 
@@ -222,22 +176,31 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   padding-top: 2rem;
   padding-left: 4rem;
   padding-right: 4rem;
-
+  @media screen and (min-width:1600px) {
+    width: 70%;
+  }
   img {
     border-radius: 6px;
     width: 50%;
   }
 
-  .challenges {
-    width: 50%;
-  }
 }
 
 .svg-container {
-  margin-left: 20rem;
-  margin-right: 20rem;
+  
+  margin-left: 20%;
+  margin-right: 20%;
+  @media screen and (min-width:1620px) {
+    width: 70%;
+  }
 }
-
+.bullets {
+  background: transparent;
+  color: white;
+  position: relative;
+  
+  border: #ffb400;
+}
 
 
 /////// Carousel \\\\\\\\\\\
@@ -245,33 +208,44 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 .carousel {
   background-color: #ffb400;
   height: 40vh;
+  margin-top: 20vh;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  overflow: hidden;
+  position: relative;
 
   .carousel-images {
+    width: 100%;
+    height: 100%;
     position: relative;
     border-radius: 10px;
-    
-    max-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     overflow: hidden;
+    z-index: 1;
 
-    img {
-      width: 99%;
-      height: 99%;
+    .anima-img {
+      width: 50%;
+      height: auto;
+      position: absolute;
       border-radius: 8px;
     }
   }
   .left,
   .right {
-    background-color: #ffb400;
+    background-color:transparent;
     position: absolute;
     top: 0;
     bottom: 0;
-    margin: auto 10px;
+    margin: auto 40px;
     height: 100px;
     width: 100px;
     border: none;
+    z-index:2
+  
   }
 
   .left {
