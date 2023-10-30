@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React, { useState, useRef } from "react";
 import Modal from "react-modal";
-import Carousel from "./Carousel";
+import Carousel from "./Carousel.jsx";
 
 ///// variant objects to control animations
 
