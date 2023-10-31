@@ -184,7 +184,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 
 .close-modal {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   @media screen and (max-width: 1199px) {
     right: 0px;
     top: -48px;
