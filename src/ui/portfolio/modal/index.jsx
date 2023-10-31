@@ -169,11 +169,11 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                     animate={inView0 ? 'visible' : 'hidden'}
                     className="col container">
                     <div className="m-3">
-                      <h4 className="project-label ">About</h4>
+                      <h4 className="project-label " style={{color:"#ffb400"}}>About</h4>
                       <span className="ft-wt-600 uppercase col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sed in atque incidunt, reiciendis saepe neque quibusdam delectus iusto illum eius quia velit. Nihil explicabo iure est inventore omnis laboriosam, odio dicta, dolores quaerat natus fugit saepe perferendis doloremque quam.</span>
                     </div>
                     <div className="m-3">
-                      <h4 className="project-label \">Mission</h4>
+                      <h4 className="project-label" style={{color:"#ffb400"}}>Mission</h4>
                       <span className="ft-wt-600 uppercase ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quasi a dicta ratione, placeat harum, at fugit atque illum dolorum voluptates eius doloribus maiores quia laudantium! Omnis in molestiae quae aliquid ut iusto! Nobis odio iusto dicta soluta sit veritatis.</span>
                     </div>
                   </motion.div>
@@ -196,7 +196,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                 </div>
               </div>
               <div className="slate">
-                <div className="content">
+                <div className="content chal">
                   <motion.div
                     ref={ref4}
                     variants={divVariants}
@@ -204,7 +204,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                     animate={inView4 ? 'visible' : 'hidden'}
                     className="challenges col container">
                     <div className="m-3">
-                      <h4>Challenges</h4>
+                      <h4 style={{color:"#ffb400"}}>Challenges</h4>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
                     </div>
                   </motion.div>
@@ -246,7 +246,7 @@ const PortfolioModalItem = ({ img, company, languages, link, description, previe
                     animate={inView2 ? 'visible' : 'hidden'}
                     transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="col container challenges">
                     <div className="m-3 ">
-                      <h4>Conclusion</h4>
+                      <h4 style={{color:"#ffb400"}}>Conclusion</h4>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora.</p>
                     </div>
                   </motion.div>

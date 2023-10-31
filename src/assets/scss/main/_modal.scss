@@ -211,29 +211,37 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     width: 80%;
   }
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width:850px) {
     padding: 1rem;
+    
   }
 
   .content {
     display: flex;
     
 
-    @media screen and (max-width:900px) {
+    @media screen and (max-width:850px) {
       flex-direction: column;
+      border-bottom: 2px solid #ffb400;
     }
   }
 
   img {
     border-radius: 6px;
     width: 50%;
-    @media screen and (max-width:900px) {
+    @media screen and (max-width:850px) {
       width: 100%;
     }
   }
 
   .challenges {
     margin: auto;
+  }
+}
+
+.content.chal {
+  @media screen and (max-width:850px) {
+    flex-direction: column-reverse;
   }
 }
 
@@ -244,7 +252,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     width: 70%;
   }
 
-  @media screen and (max-width:900px) {
+  @media screen and (max-width:850px) {
     margin: 0;
     position: absolute;
     visibility: hidden
@@ -260,10 +268,11 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   margin-top: 20vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-evenly;
   overflow: hidden;
   @media screen and (max-width:850px) {
     margin-top: 5vh;
+    height: 20vh;
   }
 
   .carousel-images {
@@ -293,8 +302,8 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     top: 0;
     bottom: 0;
     margin: auto 40px;
-    
     width: 10vw;
+    max-width: 150px;
     border: none;
     z-index: 2
   }

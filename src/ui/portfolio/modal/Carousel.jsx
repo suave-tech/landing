@@ -69,10 +69,6 @@ export default function Carousel({ preview }) {
             prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
         );
     };
-    const handleDotClick = (index) => {
-        setDirection(index > currentIndex ? "right" : "left");
-        setCurrentIndex(index);
-    };
     return (
         <motion.div ref={ref}
         initial={{ opacity: 0 }}
@@ -107,16 +103,6 @@ export default function Carousel({ preview }) {
                 className='right'>
                     <img src='/img/right-arrow.png' alt='right-arrow' />
                 </motion.button>
-
-            </div>
-            <div className="carousel-indicator">
-                {images.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`dot ${currentIndex === index ? "active" : ""}`}
-                        onClick={() => handleDotClick(index)}
-                    ></div>
-                ))}
             </div>
         </motion.div>
     )
