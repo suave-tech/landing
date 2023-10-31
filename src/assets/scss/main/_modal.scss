@@ -79,20 +79,17 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 
 .custom-modal.dark {
   background: #111;
-
   &.hero {
     background: #111;
   }
-
   &.light {
     background: #fff;
   }
-
 }
 
 ///////New CSS///////
 
-// class used to disable scrolling on page underneath the Modal
+
 .no-scroll {
   overflow: hidden
 }
@@ -127,6 +124,9 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 .project-header {
   margin-bottom: 10vh;
   border-bottom: 4px solid #ffb400;
+  @media screen and (max-width:850px) {
+    margin-bottom: 2rem;
+  }
 
   .header-row {
     display: flex;
@@ -137,6 +137,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
       justify-content: center;
       align-items: center;
       text-align: center;
+      margin-bottom: 5vh;
     }
     div{
       flex:1
@@ -172,7 +173,8 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   }
 
   .company-logo {
-    max-width: 15rem;
+    max-width: 18rem;
+    margin: auto;
     min-width: 10rem;
     text-align: center;
     display: flex;
@@ -289,6 +291,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 
     .anima-img {
       width: 50%;
+      max-width: 600px;
       height: auto;
       position: absolute;
       border-radius: 8px;
