@@ -161,7 +161,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     variants={divVariants}
                     initial='hidden'
                     animate={inView0 ? 'visible' : 'hidden'}
-                    src={preview[0] || "img/logo.png"} alt={`${company} preview`} className="cover" />
+                    src={`${preview[0]}` || "img/logo.png"} alt={`${company} preview`} className="cover" />
                   <motion.div
                     ref={ref0}
                     variants={divVariants}
@@ -238,7 +238,8 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     variants={divVariants}
                     initial='hidden'
                     animate={inView2 ? 'visible' : 'hidden'}
-                    src={`${preview[2]}`} alt="site" />
+                    src={`${preview[2]}`} alt="site" className="cover"/>
+                    
                   <motion.div
                     ref={ref2}
                     variants={divVariants}
