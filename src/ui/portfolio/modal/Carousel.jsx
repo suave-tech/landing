@@ -51,7 +51,7 @@ export default function Carousel({ preview }) {
 
     const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true })
     const images = preview
-    const [currentIndex, setCurrentIndex] = useState(1)
+    const [currentIndex, setCurrentIndex] = useState(0)
     const [direction, setDirection] = useState('left');
 
     console.log(currentIndex)

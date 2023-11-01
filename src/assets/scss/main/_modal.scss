@@ -162,6 +162,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   .company {
     margin-top: 3rem;
     text-transform: uppercase;
+    max-width: 300px;
     z-index: 3;
   }
   .company-h3 {
@@ -174,7 +175,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   }
 
   .company-logo {
-    max-width: 18rem;
+    max-width: 12rem;
     margin: auto;
     min-width: 10rem;
     text-align: center;
@@ -190,7 +191,6 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     right: 0px;
     top: -48px;
   }
-
   @media screen and (max-width: 850px) {
     width: 100vw;
     left: 5px;
@@ -201,6 +201,9 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     filter: invert(1);
     max-width: 2em;
     max-height: 2em;
+    @media screen and (max-width: 850px) {
+      max-width: 1em;
+    }
   }
 }
 

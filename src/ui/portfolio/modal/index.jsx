@@ -161,7 +161,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     variants={divVariants}
                     initial='hidden'
                     animate={inView0 ? 'visible' : 'hidden'}
-                    src={preview[1] || "img/logo.png"} alt={`${company} preview`} className="cover" />
+                    src={preview[0] || "img/logo.png"} alt={`${company} preview`} className="cover" />
                   <motion.div
                     ref={ref0}
                     variants={divVariants}
@@ -187,7 +187,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     initial="hidden"
                     animate={inView3 ? "visible" : "hidden"} viewBox="0 0 1151 510" fill="none">
                     {/* <!-- hexagon at the top left --> */}
-                    <motion.path variants={pathVariants} d="M21.5 32.5L40 41.5V61L21.5 71L3 61V41.5L21.5 32.5Z" stroke="#ffb400" stroke-width="5" />
+                    <motion.path variants={pathVariants} d="M21.5 32.5L40 41.5V61L21.5 71L3 61V41.5L21.5 32.5Z" stroke="#ffb400" stroke-width="200" />
                     {/* Vertical line */}
                     <motion.path variants={pathVariants} d="M21.5 71V468" stroke="#ffb400" stroke-width="5" />
                     {/* <!-- hexagon at the bottom left --> */}
@@ -213,7 +213,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     variants={divVariants}
                     initial='hidden'
                     animate={inView4 ? 'visible' : 'hidden'}
-                    transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="cover" src={`${preview[0]}`} alt="site" />
+                    transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="cover" src={`${preview[1]}`} alt="site" />
                 </div>
               </div>
               <div className="slate">
