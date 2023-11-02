@@ -92,7 +92,7 @@ export const PORTFOLIO_ITEMS = [
     company: "Bonanza Exorsa",
     link: "bonanzaexorsa.com",
     img: "/img/companies/bonanza-3d-logo.png",
-    preview: ["/img/companies/bonanza-pic1.png","/img/companies/bonanza-pic1.png","/img/companies/bonanza-pic1.png"],
+    preview: ["/img/companies/bonanza-pic1.png","/img/companies/bonanza-3d-logo.png","/img/companies/bonanza-pic1.png"],
     languages: "NextTS, Solidity, Typescript",
     about: "Bonanza Exorsa is a metaphysical brand using NFT's.",
     goals: null,
@@ -168,7 +168,7 @@ export const PORTFOLIO_ITEMS = [
   {
     company:"Pepe Analytics",
     link:"https://pepeanalytics.com/",
-    img:"",
+    img:"/img/companies/pepeanalytics-logo.png",
     preview:["/img/companies/pepeanalytics-pic1.png","/img/companies/pepeanalytics-pic2.png","/img/companies/pepeanalytics-pic3.png"],
     languages:"",
     aout:"",
