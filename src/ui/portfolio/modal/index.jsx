@@ -139,7 +139,8 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     animate='visible'
                     src={'img/logo.png'} className="modal-logo" />
                 </div> */}
-                  <div className="close-modal" onClick={toggle}>
+                
+                  <div className="close-modal" onClick={toggle} style={{ flex: "0" }}>
                     <motion.img initial={{ scale: 1 }} animate={{ scale: 1.3 }} transition={{ duration: 0.5 }} src="/img/exit.png" alt="close icon" />
                 </div>
               </div>

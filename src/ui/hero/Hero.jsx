@@ -59,10 +59,11 @@ const Hero = () => {
         closeTimeoutMS={500}
       >
         <div>
-          <button className="close-modal" onClick={toggleModalOne}>
-            <img src="/img/cancel.svg" alt="close icon" />
-          </button>
-          {/* End close icon */}
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div className="close-modal" onClick={() => setIsOpen(false)} style={{ paddingRight: "1rem", paddingTop: "1rem" }}>
+            <img src="/img/exit.png" alt="close icon" />
+          </div>
+          </div>
 
           <div className="box_inner about">
             <div data-aos="fade-up" data-aos-duration="1200">

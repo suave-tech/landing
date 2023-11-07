@@ -18,7 +18,7 @@ const Home = () => {
     <div className="yellow">
       <Tabs>
         <div className="header">
-          <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
+          <TabList className="icon-menu revealator-slideup revealator-once revealator-delay1">
             {menuItem.map((item, i) => (
               <Tab className="icon-box" key={i}>
                 <i className={`fa ${item.icon}`}></i>
@@ -29,7 +29,7 @@ const Home = () => {
         </div>
 
         <div className="tab-panel_list">
-          <TabPanel className="home ">
+          <TabPanel className="home">
             <div
               className="container-fluid main-container container-home p-0 "
               data-aos="fade-up"
