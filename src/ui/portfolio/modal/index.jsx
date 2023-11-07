@@ -20,36 +20,36 @@ const headerChild = {
 }
 const divVariants = {
   hidden: {
-    opacity:0
+    opacity: 0
   },
   visible: {
-    opacity:1,
+    opacity: 1,
     transition: {
       duration: .5,
-      ease:'easeInOut'
+      ease: 'easeInOut'
     }
   }
 }
 
-const svgVariants={
-  hidden:{},
-  visible:{
-    transition:{
-      staggerChildren:.5,
-      delayChildren:0.2,
+const svgVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: .5,
+      delayChildren: 0.2,
     }
   }
 }
 const pathVariants = {
   hidden: {
-    
-    pathLength:0,
-    strokeDashoffset:1
+
+    pathLength: 0,
+    strokeDashoffset: 1
   },
   visible: {
-    
+
     pathLength: 1,
-    strokeDashoffset:0,
+    strokeDashoffset: 0,
     transition: {
       duration: .5,
       ease: 'easeInOut'
@@ -64,7 +64,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
   const modalContentRef = useRef(null);
 
   // refs for use in animation of element when in view
-  const [ref0, inView0] = useInView({threshold: 0.2, triggerOnce: true})
+  const [ref0, inView0] = useInView({ threshold: 0.2, triggerOnce: true })
   // ref for svg line 
   const [ref1, inView1] = useInView({ threshold: 0.2, triggerOnce: true })
   //ref for Challenges
@@ -139,9 +139,9 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     animate='visible'
                     src={'img/logo.png'} className="modal-logo" />
                 </div> */}
-                
-                  <div className="close-modal" onClick={toggle} style={{ flex: "0" }}>
-                    <motion.img initial={{ scale: 1 }} animate={{ scale: 1.3 }} transition={{ duration: 0.5 }} src="/img/exit.png" alt="close icon" />
+
+                <div className="close-modal" onClick={toggle} style={{ flex: "0" }}>
+                  <motion.img initial={{ scale: 1 }} animate={{ scale: 1.3 }} transition={{ duration: 0.5 }} src="/img/exit.png" alt="close icon" />
                 </div>
               </div>
             </div>
@@ -160,11 +160,11 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     animate={inView0 ? 'visible' : 'hidden'}
                     className="col container m-auto d-flex justify-content-between flex-column">
                     <div className="m-3">
-                      <h4 className="project-label " style={{color:"#ffb400"}}>About</h4>
+                      <h4 className="project-label " style={{ color: "#ffb400" }}>About</h4>
                       <span className="ft-wt-600 uppercase col">{about ? about : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sed in atque incidunt, reiciendis saepe neque quibusdam delectus iusto illum eius quia velit. Nihil explicabo iure est inventore omnis laboriosam, odio dicta, dolores quaerat natus fugit saepe perferendis doloremque quam."}</span>
                     </div>
                     <div className="m-3">
-                      <h4 className="project-label" style={{color:"#ffb400"}}>Goals</h4>
+                      <h4 className="project-label" style={{ color: "#ffb400" }}>Goals</h4>
                       <span className="ft-wt-600 uppercase ">{goals ? goals : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quasi a dicta ratione, placeat harum, at fugit atque illum dolorum voluptates eius doloribus maiores quia laudantium! Omnis in molestiae quae aliquid ut iusto! Nobis odio iusto dicta soluta sit veritatis."}</span>
                     </div>
                   </motion.div>
@@ -174,16 +174,19 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                 <div className="svg-container">
                   <motion.svg
                     ref={ref3}
-                    variants={svgVariants} 
+                    variants={svgVariants}
                     initial="hidden"
-                    animate={inView3 ? "visible" : "hidden"} viewBox="0 0 1151 510" fill="none">
-                    {/* <!-- hexagon at the top left --> */}
-                    <motion.path variants={pathVariants} d="M21.5 32.5L40 41.5V61L21.5 71L3 61V41.5L21.5 32.5Z" stroke="#ffb400" stroke-width="200" />
-                    {/* Vertical line */}
-                    <motion.path variants={pathVariants} d="M21.5 71V468" stroke="#ffb400" stroke-width="5" />
-                    {/* <!-- hexagon at the bottom left --> */}
-                    <motion.path variants={pathVariants} d="M21.5 468L40 478V497L21.5 507L3 497V478L21.5 468Z" stroke="#ffb400" stroke-width="5" />
+                    animate={inView3 ? "visible" : "hidden"}
+                    viewBox="0 0 1151 510"
+                    fill="none"
+                  >
+                    {/* hexagon at the top right */}
+                    <motion.path variants={pathVariants} d="M947.225 41.5L964.725 32.5V13L947.225 3L928.225 13V32.5L947.225 41.5Z" stroke="#ffb400" strokeWidth="1" />
+                    {/* Horizontal and vertical lines */}
+                    <motion.path variants={pathVariants} d="M947.225 41.5V259.25H20.5V468" stroke="#ffb400" strokeWidth="1" />
+                    <motion.path variants={pathVariants} d="M20.5 468L39 478V497L20.5 507L2 497V478L20.5 468Z" stroke="#ffb400" strokeWidth="1" />
                   </motion.svg>
+
                 </div>
               </div>
               <div className="slate">
@@ -195,11 +198,11 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     animate={inView4 ? 'visible' : 'hidden'}
                     className="challenges col container">
                     <div className="m-3">
-                      <h4 style={{color:"#ffb400"}}>Challenges</h4>
-                      <p>{ challenges ? challenges : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora."}</p>
+                      <h4 style={{ color: "#ffb400" }}>Challenges</h4>
+                      <p>{challenges ? challenges : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora."}</p>
                     </div>
                   </motion.div>
-                  <motion.img 
+                  <motion.img
                     ref={ref4}
                     variants={divVariants}
                     initial='hidden'
@@ -211,26 +214,26 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                 <div className="svg-container ">
                   <motion.svg
                     ref={ref1}
-                    variants={svgVariants} 
+                    variants={svgVariants}
                     initial="hidden"
                     animate={inView1 ? "visible" : "hidden"} viewBox="0 0 1151 510" fill="none">
                     {/* <!-- hexagon at the top right --> */}
-                    <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5Z" stroke="#ffb400" stroke-width="5" />
+                    <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M1130 41.5L1147.5 32.5V13L1130 3L1111 13V32.5L1130 41.5Z" stroke="#ffb400" strokeWidth="1" />
                     {/* Horizontal and vertical lines */}
-                    <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M1130 41.5V259.25H187.275V468" stroke="#ffb400" stroke-width="5" />
-                    <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M187.275 468L205.775 478V497L187.275 507L168.775 497V478L187.275 468Z" stroke="#ffb400" stroke-width="5" />
+                    <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M1130 41.5V259.25H187.275V468" stroke="#ffb400" strokeWidth="1" />
+                    <motion.path transform="scale(-1, 1) translate(-1151, 0)" variants={pathVariants} d="M187.275 468L205.775 478V497L187.275 507L168.775 497V478L187.275 468Z" stroke="#ffb400" strokeWidth="1" />
                   </motion.svg>
                 </div>
               </div>
               <div className="slate">
                 <div className="content">
-                  <motion.img 
+                  <motion.img
                     ref={ref2}
                     variants={divVariants}
                     initial='hidden'
                     animate={inView2 ? 'visible' : 'hidden'}
-                    src={`${preview[2]}`} alt="site" className="cover"/>
-                    
+                    src={`${preview[2]}`} alt="site" className="cover" />
+
                   <motion.div
                     ref={ref2}
                     variants={divVariants}
@@ -238,7 +241,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     animate={inView2 ? 'visible' : 'hidden'}
                     transition={{ ease: 'easeOut', duration: 1.5, delay: 1 }} className="col container challenges">
                     <div className="m-3 ">
-                      <h4 style={{color:"#ffb400"}}>Conclusion</h4>
+                      <h4 style={{ color: "#ffb400" }}>Conclusion</h4>
                       <p>{conclusion ? conclusion : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cupiditate eos iure rerum laborum minima iusto amet voluptatum, repellat quod sed impedit ut dicta! Aperiam quia iure nihil voluptatum voluptatibus, porro reprehenderit nulla quam dolore exercitationem pariatur molestias! Assumenda, tempora."}</p>
                     </div>
                   </motion.div>
