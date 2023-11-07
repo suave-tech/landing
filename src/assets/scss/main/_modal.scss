@@ -132,6 +132,7 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   .header-row {
     display: flex;
     justify-content: space-between;
+    margin: 1rem;
 
     @media screen and (max-width:850px) {
       flex-direction: column-reverse;
@@ -143,41 +144,32 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     div{
       flex:1
     }
-    .left-side{
-      padding-left: 4rem;
-      @media screen and (max-width:850px){
-        padding-left: 0;
-      }
-    }
   }
 
   .modal-logo {
-    margin-top: 1rem;
-    max-width: 10rem;
+    max-width: 5rem;
     @media screen and (max-width:850px) {
       visibility: hidden;
       position: absolute;
     }
   }
   .company {
-    margin-top: 3rem;
+    margin-top: 1rem;
     text-transform: uppercase;
-    max-width: 300px;
     z-index: 3;
+    margin: 0;
   }
   .company-h3 {
-    margin-bottom: 3rem;
-    line-height: 1.3;
-    color: #363636;
+    color: #4a4a4a;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin: 0;
   }
 
   .company-logo {
-    max-width: 12rem;
+    max-width: 5rem;
     margin: auto;
-    min-width: 10rem;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -199,8 +191,8 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   img {
     cursor: pointer;
     filter: invert(1);
-    max-width: 2em;
-    max-height: 2em;
+    max-width: 1.5em;
+    max-height: 1.5em;
     @media screen and (max-width: 850px) {
       max-width: 1em;
     }
@@ -268,10 +260,10 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
 /////// Carousel \\\\\\\\\\\
 
 .carousel {
-  background-color: #ffb400;
-  height: 40vh;
+  background-color: rgb(35, 35, 35);
+  height: 25rem;
   border-radius: 5px;
-  margin-top: 20vh;
+  margin: 6rem 0;
   display: flex;
   align-items: center;
   justify-content:space-evenly;
@@ -310,10 +302,11 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
     top: 0;
     bottom: 0;
     margin: auto 40px;
-    width: 10vw;
+    width: 5rem;
     max-width: 150px;
     border: none;
-    z-index: 2
+    z-index: 2;
+    filter: invert(1) hue-rotate(270deg);
   }
 
   .left {

@@ -867,10 +867,10 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 .portfolio .grid li {
-  width: 33.333333%;
+  width: 25%;
   float: left;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px;
 }
 
 .portfolio .grid figure {
@@ -923,6 +923,17 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   padding: 3rem;
 }
 
+.px-2 {
+  padding: 0 1rem;
+}
+
+.px-4 {
+  padding: 0 2rem;
+}
+.px-6 {
+  padding: 0 3rem;
+}
+
 .rounded {
   border-radius: 1rem;
 }
@@ -930,7 +941,6 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 .logo {
   width: 100%;
   height: 100%;
-  background: #252525;
   padding: 30px;
   border-radius: 10px;
   overflow: hidden;
@@ -940,12 +950,12 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   }
   @media screen and (min-width: 1350px) {
     img {
-      min-height: 370px;
+      min-height: 300px;
     }
   }
   @media screen and (max-width: 450px) {
     img {
-      min-height: 166px;
+      min-height: 150px;
     }
   }
 }
@@ -1369,6 +1379,12 @@ body.light .contact .custom-span-contact a {
   }
 }
 
+@media (max-width: 1000px) {
+  .portfolio .grid li {
+    width: 33.333333%;
+  }
+}
+
 /* Mobile  Navigation */
 
 @media (max-width: 991px) {
@@ -1531,10 +1547,6 @@ body.light .contact .custom-span-contact a {
     font-weight: 400;
   }
 
-  .portfolio .grid li {
-    width: 50%;
-  }
-
   .portfolio .slideshow {
     background: #252525;
   }
@@ -1607,6 +1619,12 @@ body.light .contact .custom-span-contact a {
 
   .contact .main-content {
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio .grid li {
+    width: 50%;
   }
 }
 

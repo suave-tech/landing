@@ -42,7 +42,7 @@ const Home = () => {
 
           <TabPanel className="portfolio professional">
             <div
-              className="title-section text-left text-sm-center"
+              className="title-section text-center"
               data-aos="fade-up"
               data-aos-duration="1200"
             >

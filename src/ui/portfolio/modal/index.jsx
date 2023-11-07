@@ -57,19 +57,6 @@ const pathVariants = {
   }
 }
 
-const logoVariant = {
-  hidden: {
-    opacity: 0
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay:0.5,
-      duration:.5
-    }
-  }
-}
-
 const PortfolioModalItem = ({ img, company, languages, link, about, goals, challenges, conclusion, preview, type, state, setState, padding }) => {
 
   /// controls modal open when clicking on company icon
@@ -104,15 +91,13 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
     }
   }
 
-
-
-
   return (
     <>
-      <figure onClick={toggle} className="logo p-2">
+      <figure onClick={toggle} className="logo">
         <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
-        <div className=" hover-content-wrapper">
-          <span className="content-title">{company}</span>
+        <div className="hover-content-wrapper">
+          <span className="content-title" style={{ fontSize: "20px", fontWeight: "bold", top: "8rem" }}>{company}</span>
+          <span className="content-subtitle" style={{ marginTop: "1.5rem", fontSize: "12px" }}>{type}</span>
         </div>
       </figure>
 
@@ -130,7 +115,6 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
             <div className="project-header container-fluid ">
               <div className="header-row">
                 <div className="left-side">
-                  <img src='img/logo.png' className="modal-logo" alt='sauve' />
                   <motion.h1
                     variants={headerChild}
                     initial="hidden"
@@ -142,15 +126,21 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     animate="visible"
                     className="company-h3">{type}</motion.h3>
                 </div>
-                <div className="company-logo">
+                {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
                   <motion.img
                     variants={logoVariant}
                     initial='hidden'
                     animate='visible'
-                    src={`${img}`} className=" " />
-                </div>
+                    src={`${img}`} className="modal-logo" />
+                    <span>X</span>
+                                      <motion.img
+                    variants={logoVariant}
+                    initial='hidden'
+                    animate='visible'
+                    src={'img/logo.png'} className="modal-logo" />
+                </div> */}
                   <div className="close-modal" onClick={toggle}>
-                    <motion.img initial={{ scale: 1 }} animate={{ scale: 1.3 }} transition={{ duration: 0.5 }} src="/img/exit.png" alt="close icon" className="m-3"/>
+                    <motion.img initial={{ scale: 1 }} animate={{ scale: 1.3 }} transition={{ duration: 0.5 }} src="/img/exit.png" alt="close icon" />
                 </div>
               </div>
             </div>

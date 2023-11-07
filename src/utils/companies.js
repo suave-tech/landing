@@ -1,5 +1,18 @@
 export const PORTFOLIO_ITEMS = [
   {
+    company: "PintSwap",
+    link: "pintswap.exchange",
+    img: "/img/companies/ps-cup.svg",
+    preview: ["/img/companies/pintswap-pic1.png","/img/companies/pintswap-pic2.png","/img/companies/pintswap-pic3.png"],
+    languages: "NextJS, LibP2P, Solidity, Typescript",
+    about: "PintSwap is a peer-to-peer decentralized exchange using multi-party transaction scripts.",
+    goals: null,
+    challenges: null,
+    conclusion: null,
+    type: "Blockchain",
+    padding: 'px-6'
+  },
+  {
     company: "VMEX Finance",
     link: "vmex.finance",
     img: "/img/companies/vmex-logo.svg",
@@ -22,7 +35,7 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Ecommerce",
-    padding: 'p-4'
+    padding: 'px-6'
   },
   {
     company: "zeroDAO",
@@ -35,6 +48,19 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Blockchain"
+  },
+  {
+    company: "DataEarn",
+    link: "app.dataearn.com",
+    img: "/img/companies/dataearn-logo(1).png",
+    preview: ["/img/companies/dataearn-pic1.png","/img/companies/dataearn-pic2.png","/img/companies/dataearn-pic3.png"],
+    languages: "NextTS, Python, Django, SQL",
+    about: "DataEarn is building a way to allow individuals to access, understand, protect, and monetize their data.",
+    goals: null,
+    challenges: null,
+    conclusion: null,
+    type: "Web App",
+    padding: 'px-6'
   },
   {
     company: "Papes",
@@ -50,19 +76,6 @@ export const PORTFOLIO_ITEMS = [
     padding: 'p-0'
   },
   {
-    company: "DataEarn",
-    link: "app.dataearn.com",
-    img: "/img/companies/dataearn-logo(1).png",
-    preview: ["/img/companies/dataearn-pic1.png","/img/companies/dataearn-pic2.png","/img/companies/dataearn-pic3.png"],
-    languages: "NextTS, Python, Django, SQL",
-    about: "DataEarn is building a way to allow individuals to access, understand, protect, and monetize their data.",
-    goals: null,
-    challenges: null,
-    conclusion: null,
-    type: "Web App",
-    padding: 'p-6'
-  },
-  {
     company: "Vita Films",
     link: "vitafilmllc.com",
     img: "/img/companies/vita-logo.png",
@@ -73,20 +86,7 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Website",
-    padding: 'p-4'
-  },
-  {
-    company: "PintSwap",
-    link: "pintswap.eth.limo",
-    img: "/img/companies/pintswap-logo.png",
-    preview: ["/img/companies/pintswap-pic1.png","/img/companies/pintswap-pic2.png","/img/companies/pintswap-pic3.png"],
-    languages: "NextJS, LibP2P, Solidity, Typescript",
-    about: "PintSwap is a peer-to-peer decentralized exchange using multi-party transaction scripts.",
-    goals: null,
-    challenges: null,
-    conclusion: null,
-    type: "Blockchain",
-    padding: 'p-4'
+    padding: 'px-4'
   },
   {
     company: "Bonanza Exorsa",
@@ -99,7 +99,7 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Blockchain",
-    padding: 'p-4'
+    padding: 'px-4'
   },
   {
     company: "Marmolaz",
@@ -112,7 +112,7 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Ecommerce",
-    padding: 'p-4'
+    padding: 'px-4'
   },
   {
     company: "LiveDuel",
@@ -125,7 +125,7 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Blockchain",
-    padding: 'p-2'
+    padding: 'px-2'
   },
   {
     company: "Lazar Stucco",
@@ -138,10 +138,10 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Website",
-    padding: 'p-4'
+    padding: 'px-4'
   },
   {
-    company: "Fellowship Event Hall",
+    company: "Fellowship Events",
     link: "events.saintmaryro.org",
     img: "/img/companies/fellowship-logo.png",
     preview: ["/img/companies/fellowship-pic1.png","/img/companies/fellowship-pic2.png","/img/companies/fellowship-pic3.png"],
@@ -151,7 +151,7 @@ export const PORTFOLIO_ITEMS = [
     challenges: null,
     conclusion: null,
     type: "Website",
-    padding: 'p-4'
+    padding: 'px-4'
   },
   {
     company: "Sports Roulette ATL",
@@ -175,6 +175,7 @@ export const PORTFOLIO_ITEMS = [
     goals: null,
     challenges: null,
     conclusion: null,
-    type: "Blockchain"
+    type: "Blockchain",
+    padding: 'px-2'
   }
 ]

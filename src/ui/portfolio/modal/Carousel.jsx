@@ -54,8 +54,6 @@ export default function Carousel({ preview }) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [direction, setDirection] = useState('left');
 
-    console.log(currentIndex)
-
     const handleNext = () => {
         setDirection('right')
         setCurrentIndex((prevIndex) =>
