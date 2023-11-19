@@ -126,20 +126,6 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     animate="visible"
                     className="company-h3">{type}</motion.h3>
                 </div>
-                {/* <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-                  <motion.img
-                    variants={logoVariant}
-                    initial='hidden'
-                    animate='visible'
-                    src={`${img}`} className="modal-logo" />
-                    <span>X</span>
-                                      <motion.img
-                    variants={logoVariant}
-                    initial='hidden'
-                    animate='visible'
-                    src={'img/logo.png'} className="modal-logo" />
-                </div> */}
-
                 <div className="close-modal" onClick={toggle} style={{ flex: "0" }}>
                   <motion.img initial={{ scale: 1 }} animate={{ scale: 1.3 }} transition={{ duration: 0.5 }} src="/img/exit.png" alt="close icon" />
                 </div>
@@ -247,9 +233,10 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                   </motion.div>
                 </div>
               </div>
-              <div className="slate">
+              <div className="slate" />
+              {/* <div className="slate">
                 <Carousel preview={preview} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
