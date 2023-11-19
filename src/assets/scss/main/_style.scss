@@ -491,7 +491,6 @@ body.light .header ul.icon-menu li.icon-box:hover i {
     width: 100%;
     display: block;
     background: #2b2a2a;
-    padding: 8px;
 
     ul.icon-menu {
       display: flex;
@@ -501,7 +500,6 @@ body.light .header ul.icon-menu li.icon-box:hover i {
         margin: 0 !important;
         width: 45px !important;
         height: 45px !important;
-        background: #444 !important;
         i {
           top: 14px;
         }
@@ -529,17 +527,16 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 .header ul.icon-menu li.icon-box {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   list-style: none;
   position: relative;
   display: flex;
   align-items: center;
   transition: 0.3s;
-  margin: 20px 0;
-  border-radius: 50%;
-  background: #2b2a2a;
+  margin: 0;
   cursor: pointer;
+  width: 100% !important;
 }
 
 .header ul.icon-menu li.icon-box i {
@@ -1741,7 +1738,7 @@ body.light .contact .custom-span-contact a {
   }
 
   .portfolio .grid li {
-    width: 100%;
+    width: 50%;
   }
 
   .portfolio .main-content > .container {
