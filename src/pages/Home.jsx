@@ -1,9 +1,9 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Hero from "../ui/hero/Hero";
-import Index from "../ui/about/index";
+// import Index from "../ui/about/index";
 import Portfolio from "../ui/portfolio/Portfolio";
-import Blog from "../ui/blog/Blog";
+// import Blog from "../ui/blog/Blog";
 import Contact from "../ui/components/Contact";
 
 const menuItem = [
@@ -18,7 +18,7 @@ const Home = () => {
     <div className="yellow">
       <Tabs>
         <div className="header">
-          <TabList className=" icon-menu  revealator-slideup revealator-once revealator-delay1">
+          <TabList className="icon-menu revealator-slideup revealator-once revealator-delay1">
             {menuItem.map((item, i) => (
               <Tab className="icon-box" key={i}>
                 <i className={`fa ${item.icon}`}></i>
@@ -29,7 +29,7 @@ const Home = () => {
         </div>
 
         <div className="tab-panel_list">
-          <TabPanel className="home ">
+          <TabPanel className="home">
             <div
               className="container-fluid main-container container-home p-0 "
               data-aos="fade-up"
@@ -42,7 +42,7 @@ const Home = () => {
 
           <TabPanel className="portfolio professional">
             <div
-              className="title-section text-left text-sm-center"
+              className="title-section text-center"
               data-aos="fade-up"
               data-aos-duration="1200"
             >

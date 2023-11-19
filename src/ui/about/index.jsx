@@ -1,6 +1,6 @@
 import React from "react";
-import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
+// import PersonalInfo from "./PersonalInfo";
 
 const index = () => {
   return (
