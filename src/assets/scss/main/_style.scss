@@ -1990,10 +1990,9 @@ button:focus {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 10px !important;
+  margin-bottom: 30px !important;
   li {
-    margin: 15px;
-    margin-top: 0;
+    padding: 6px 12px;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
