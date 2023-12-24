@@ -30,8 +30,8 @@ const Hero = () => {
             backgroundPosition: "center",
             backgroundSize: "300px 300px"
           }}
-        ></div>
-        <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start">
+        />
+        <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start pb-4">
           <div>
             <img
               src={`${heroContent.heroMobileImage}`}
@@ -73,24 +73,19 @@ const Hero = () => {
                 </h1>
                 <span className="title-bg absolute">CONTACT</span>
               </div>
-              {/* End title */}
               <div
                 className="contact container"
               >
                 <div className="row">
-                  {/*  Contact Form Starts  */}
                   <div className="col-12 mb-6">
                     <ContactForm />
                   </div>
-                  {/*  Contact Form Ends */}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {/* End modal box news */}
       </Modal>
-      {/* End  Modal for About More */}
     </>
   );
 };

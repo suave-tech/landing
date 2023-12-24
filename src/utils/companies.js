@@ -9,7 +9,7 @@ export const PORTFOLIO_ITEMS = [
     goals: "Trade low-liquidity tokens without the risk of losing funds to high slippage while also avoiding any unnecessary fees. To do this, build a PWA, Telegram Bot, and trading engine to automate processes all on top of a peer-to-peer network.", 
     challenges: "Creating token swapping contracts is easy. But, creating a transaction script with 2p-ecdsa to enable OTC-type trading and reliably connecting all that to multiple clients is not. We decided to create a LibP2P wrapper to run in any environment, including browsers, with WebRTC as the communication protocol combined with websockets to enable high throughput of data being sent.",
     conclusion: "Peer-to-peer networks are very powerful. Combined with the revolutionary blockchain, we were able to build an optimized P2P OTC orderbook DEX, removing the issues traditional AMM's have.",
-    type: "Blockchain",
+    type: "Blockchain featured",
     padding: 'px-6'
   },
   {
@@ -22,7 +22,7 @@ export const PORTFOLIO_ITEMS = [
     goals: "Enable deeper liquidity in the lending and borrowing crypto markets. Create the same trustworthy user experience while also giving crypto users more opportunities to utilize all their tokens.",
     challenges: "While many lending and borrowing protocols have been built, not many have been created with the idea that some protocols/tokens fail in one way or another. How can we give trust back to the users in the world of decentralized finance?",
     conclusion: "The concept of tranches is used in traditional finance, so we decided to build a lending and borrowing protocol that is effectively the same thing. This way, you have the same familiar defi experience with the additional comfort that even if one market fails, your funds don't take the same impact.",
-    type: "Blockchain"
+    type: "Blockchain featured"
   },
   {
     company: "Raycon",
@@ -47,7 +47,7 @@ export const PORTFOLIO_ITEMS = [
     goals: "Create a decentralized and secure bridge between EVM and non-EVM chains with an emphasis on reliability and speed.",
     challenges: "Former bridges that have existed to solve this issue were vastly centralized allowing for critical one-point attacks. How can we distribute and coordinate the signing of messages amongst hundreds of node runners across different chains?",
     conclusion: "To accomplish this, we used a FROST signing system with schnorr signatures. This peer-to-peer system design allows for high flexibility while the signing schema enables high security.",
-    type: "Blockchain"
+    type: "Blockchain featured"
   },
   {
     company: "DataEarn",
@@ -59,8 +59,20 @@ export const PORTFOLIO_ITEMS = [
     goals: "The data broker industry is a $250B industry however users have no control of their data nor get any returns on this corrupt data market. Create a one-stop-shop data platform where users can earn money on their data as well as take full control of how their data is shared.",
     challenges: "Creating a highly-scalable and flexible universal parser is the most difficult development piece in this feat as every company provides user data in different formats with different property names. How can we best standardize and show users thousands of data points?",
     conclusion: "Using the industry standard data organization, we built a way for DataEarn to not only show users their data in an ingestible manner but also a way for the company to export an aggregated view of their user's data so they can easily reach out to data brokers with a unique offer.",
-    type: "Web App",
+    type: "Web App featured",
     padding: 'px-6'
+  },
+  {
+    company: "Transformation",
+    link: "seamosstransformation.com",
+    img: "/img/companies/transformation-logo.svg",
+    preview: ["/img/companies/transformation-pic1.png", "/img/companies/transformation-pic2.png", "/img/companies/transformation-pic3.png"],
+    languages: "Shopify, Liquid, HTML, SQL",
+    about: "",
+    goals: "",
+    challenges: "",
+    conclusion: "",
+    type: "Ecommerce featured"
   },
   {
     company: "Papes",
@@ -72,7 +84,7 @@ export const PORTFOLIO_ITEMS = [
     goals: "Create an attractive and cool landing page for BAYC NFT holders where they can come to purchase exclusive products based on verifiable ownership of a BAYC NFT.",
     challenges: "As the BAYC is full of high-profile individuals, we had to create a seamless and intuitive user-experience while keeping it sexy. In terms of aesthetic, what do these club members like most and why?",
     conclusion: "",
-    type: "Blockchain",
+    type: "Blockchain featured",
     padding: 'p-0'
   },
   {
@@ -86,6 +98,19 @@ export const PORTFOLIO_ITEMS = [
     challenges: "",
     conclusion: "",
     type: "Website",
+    padding: 'px-4'
+  },
+  {
+    company: "Marmolaz",
+    link: "marmolaz.com",
+    img: "/img/companies/marmolaz-logo.png",
+    preview: ["/img/companies/marmolaz-pic1.png","/img/companies/marmolaz-pic2.png","/img/companies/marmolaz-pic3.png"],
+    languages: "Shopify",
+    about: "Marmolaz creates natural, lime-based, construction products.",
+    goals: "",
+    challenges: "",
+    conclusion: "",
+    type: "Ecommerce featured",
     padding: 'px-4'
   },
   {
@@ -112,19 +137,6 @@ export const PORTFOLIO_ITEMS = [
     challenges: "",
     conclusion: "",
     type: "Blockchain",
-    padding: 'px-4'
-  },
-  {
-    company: "Marmolaz",
-    link: "marmolaz.com",
-    img: "/img/companies/marmolaz-logo.png",
-    preview: ["/img/companies/marmolaz-pic1.png","/img/companies/marmolaz-pic2.png","/img/companies/marmolaz-pic3.png"],
-    languages: "Shopify",
-    about: "Marmolaz creates natural, lime-based, construction products.",
-    goals: "",
-    challenges: "",
-    conclusion: "",
-    type: "Ecommerce",
     padding: 'px-4'
   },
   {

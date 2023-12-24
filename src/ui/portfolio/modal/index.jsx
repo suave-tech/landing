@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React, { useState, useRef } from "react";
 import Modal from "react-modal";
-import Carousel from "./Carousel.jsx";
 
 ///// variant objects to control animations
 
@@ -97,7 +96,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
         <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
         <div className="hover-content-wrapper">
           <span className="content-title" style={{ fontSize: "20px", fontWeight: "bold", top: "8rem" }}>{company}</span>
-          <span className="content-subtitle" style={{ marginTop: "1.5rem", fontSize: "12px" }}>{type}</span>
+          <span className="content-subtitle" style={{ marginTop: "1.5rem", fontSize: "12px" }}>{type?.includes(" ") ? type?.split(" ")[0] : type}</span>
         </div>
       </figure>
 
@@ -119,7 +118,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                     variants={headerChild}
                     initial="hidden"
                     animate="visible"
-                    className="company ">{company}</motion.h1>
+                    className="company ">{company}{company === 'Transformation' && " Factory"}</motion.h1>
                   <motion.h3
                     variants={headerChild}
                     initial="hidden"
@@ -211,7 +210,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                   </motion.svg>
                 </div>
               </div>
-              <div className="slate">
+              <div className="slate pb-6">
                 <div className="content">
                   <motion.img
                     ref={ref2}
@@ -233,7 +232,15 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
                   </motion.div>
                 </div>
               </div>
-              <div className="slate" />
+              <div className="slate">
+                <div className="content center">
+                <button className="button" onClick={toggle}>
+              <span className="button-text">Back to All</span>
+              <span className="button-icon fa fa-arrow-right"></span>
+            </button>
+                </div>
+              </div>
+              <div className="slate pb-5" />
               {/* <div className="slate">
                 <Carousel preview={preview} />
               </div> */}

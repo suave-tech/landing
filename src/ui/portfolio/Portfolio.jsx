@@ -3,6 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { PORTFOLIO_ITEMS } from "../../utils/companies";
 import PortfolioModalItem from "./modal";
 
+const transitions = ["fade-right", "fade-left", "fade-up", "fade-down"]
+
 const Portfolio = () => {
   return (
     <Tabs>
@@ -17,10 +19,10 @@ const Portfolio = () => {
       <div className="portfolio-tab-content">
         <TabPanel>
           <ul className="row grid justify-content-center">
-            {PORTFOLIO_ITEMS.map((el) => (
+            {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase().includes("featured")).map((el) => (
               <li
                 className="direction-reveal"
-                data-aos="fade-right"
+                data-aos={transitions[Math.floor(Math.random() * transitions.length)]}
                 data-aos-duration="1200"
                 data-aos-delay="0"
               >
@@ -33,10 +35,10 @@ const Portfolio = () => {
         {/* BLOCKCHAIN */}
         <TabPanel>
           <ul className="row grid justify-content-center">
-          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase() === 'blockchain').map((el) => (
+          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase().includes("blockchain")).map((el) => (
             <li
             className="direction-reveal"
-            data-aos="fade-right"
+            data-aos={transitions[Math.floor(Math.random() * transitions.length)]}
             data-aos-duration="1200"
             data-aos-delay="0"
           >
@@ -52,7 +54,7 @@ const Portfolio = () => {
           {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase().includes('web')).map((el) => (
             <li
             className="direction-reveal"
-            data-aos="fade-right"
+            data-aos={transitions[Math.floor(Math.random() * transitions.length)]}
             data-aos-duration="1200"
             data-aos-delay="0"
           >
@@ -65,10 +67,10 @@ const Portfolio = () => {
         {/* ECOMMERCE */}
         <TabPanel>
           <ul className="row grid justify-content-center">
-          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase() === 'ecommerce').map((el) => (
+          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase().includes('ecommerce')).map((el) => (
             <li
             className="direction-reveal"
-            data-aos="fade-right"
+            data-aos={transitions[Math.floor(Math.random() * transitions.length)]}
             data-aos-duration="1200"
             data-aos-delay="0"
           >
@@ -81,10 +83,10 @@ const Portfolio = () => {
         {/* APP */}
         <TabPanel>
           <ul className="row grid justify-content-center">
-          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase() === 'app').map((el) => (
+          {PORTFOLIO_ITEMS.filter((el) => el.type.toLowerCase().includes('app')).map((el) => (
             <li
             className="direction-reveal"
-            data-aos="fade-right"
+            data-aos={transitions[Math.floor(Math.random() * transitions.length)]}
             data-aos-duration="1200"
             data-aos-delay="0"
           >
