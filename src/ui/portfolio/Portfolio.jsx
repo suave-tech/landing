@@ -9,7 +9,7 @@ const Portfolio = () => {
   return (
     <Tabs>
       <TabList className="portfolio-tab-list">
-        <Tab>ALL</Tab>
+        <Tab>FEATURED</Tab>
         <Tab>BLOCKCHAIN</Tab>
         <Tab>WEBSITES</Tab>
         <Tab>ECOMMERCE</Tab>

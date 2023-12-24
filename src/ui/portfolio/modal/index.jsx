@@ -93,7 +93,7 @@ const PortfolioModalItem = ({ img, company, languages, link, about, goals, chall
   return (
     <>
       <figure onClick={toggle} className="logo">
-        <img src={img || "img/logo.png"} alt="Portolio" height={"300"} className={`cover rounded ${padding ? padding : ''}`} />
+        <img src={img || "img/logo.png"} alt="Portolio" className={`cover rounded ${padding ? padding : ''}`} />
         <div className="hover-content-wrapper">
           <span className="content-title" style={{ fontSize: "20px", fontWeight: "bold", top: "8rem" }}>{company}</span>
           <span className="content-subtitle" style={{ marginTop: "1.5rem", fontSize: "12px" }}>{type?.includes(" ") ? type?.split(" ")[0] : type}</span>
